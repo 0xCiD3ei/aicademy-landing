@@ -16,7 +16,7 @@ export default function HomePage() {
       <div className='main'>
         <Section1 />
         <Section2 />
-        <Section3 />
+        <Section3 /> 
         <Section4 />
       </div>
       <Footer />
