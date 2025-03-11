@@ -36,6 +36,7 @@ export default {
           foreground: 'rgb(var(--tw-color-popover-foreground))',
         },
         border: 'rgb(var(--tw-color-border))',
+        "btn-hover": 'rgb(var(--tw-color-button-hover))',
         dark: '#222222',
       },
       keyframes: {
@@ -58,12 +59,27 @@ export default {
             backgroundPosition: '700px 0',
           },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(50px)" },
+        },
+        "spin-bounce": {
+          "0%, 100%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(10deg)" },
+        },
+        "spin-debounce": {
+          "0%, 100%": { transform: "rotate(10deg)" },
+          "50%": { transform: "rotate(-10deg)" },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        float: "float 3s ease-in-out infinite",
+        "spin-bounce": "spin-bounce 1s ease-in-out infinite",
+        "spin-debounce": "spin-debounce 1s ease-in-out infinite",
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('tailwindcss-animate')],
 } satisfies Config;

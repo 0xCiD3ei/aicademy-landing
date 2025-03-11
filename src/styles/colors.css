@@ -12,6 +12,7 @@
   --tw-color-popover: 26 173 181;
   --tw-color-popover-foreground: 72 66 66;
   --tw-color-border: 245 253 236;
+  --tw-color-button-hover: 20 206 216;
 
   --color-primary: rgb(var(--tw-color-primary)); /* #1AADB5 */
   --color-primary-foreground: rgb(
@@ -28,4 +29,5 @@
   --color-popover: rgb(var(--tw-color-popover));
   --color-popover-foreground: rgb(var(--tw-color-popover-foreground));
   --color-border: rgb(var(--tw-color-border));
+  --color-button-hover: rgb(var(--tw-color-button-hover)); /* #14CED8 */
 }
