@@ -16,7 +16,7 @@ export default function Footer() {
           No prior experience needed. Learn at your own pace.
         </p>
         <div className='cursor-pointer bg-primary h-14 rounded-full px-2 py-4 max-w-max flex items-center gap-2 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)]'>
-          <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center animate-spin-bounce'>
+          <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='24'

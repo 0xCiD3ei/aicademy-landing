@@ -74,9 +74,9 @@ export default function FooterBg() {
         fill="#5BB033"/>
       <path
         d="M994.741 206.684C998.941 208.886 1002.05 213.02 1002.73 218.077C1003.86 226.373 998.046 234.008 989.752 235.133C981.456 236.258 973.821 230.445 972.696 222.15C971.967 216.778 974.148 211.683 978.028 208.455"
-        stroke="white" stroke-width="3.64379" stroke-miterlimit="10" stroke-linecap="round"/>
-      <path d="M985.604 204.548L986.894 214.063" stroke="white" stroke-width="3.64379" stroke-miterlimit="10"
-            stroke-linecap="round"/>
+        stroke="white" strokeWidth="3.64379" strokeMiterlimit="10" strokeLinecap="round"/>
+      <path d="M985.604 204.548L986.894 214.063" stroke="white" strokeWidth="3.64379" strokeMiterlimit="10"
+            strokeLinecap="round"/>
       
       <path
         d="M425.972 77.3726C425.705 77.441 425.432 77.2796 425.363 77.0123L420.004 56.0909C419.965 55.9398 419.998 55.7805 420.095 55.6577L431.265 41.4583C431.437 41.2419 431.749 41.2032 431.968 41.3744C432.184 41.546 432.222 41.8594 432.051 42.0768L421.034 56.083L426.333 76.766C426.401 77.0324 426.24 77.3038 425.972 77.3726Z"
@@ -315,7 +315,7 @@ export default function FooterBg() {
             d="M706.761 303.135C706.761 304.22 709.192 305.186 711.058 305.766C712.351 306.168 713.987 306.168 715.28 305.766C717.146 305.186 719.577 304.227 719.577 303.135C719.577 301.365 706.769 301.365 706.769 303.135H706.761Z"
             fill="white"/>
         </g>
-        <path d="M715.682 319.593V332.305" stroke="black" stroke-width="2.7282" stroke-miterlimit="10"/>
+        <path d="M715.682 319.593V332.305" stroke="black" strokeWidth="2.7282" strokeMiterlimit="10"/>
         <path
           d="M836.659 298.987C836.659 304.339 832.318 308.68 826.965 308.68C821.613 308.68 817.279 304.339 817.279 298.987C817.279 293.634 821.62 289.293 826.965 289.293C832.31 289.293 836.659 293.634 836.659 298.987Z"
           fill="#FF7B7B"/>
@@ -325,33 +325,35 @@ export default function FooterBg() {
         <path
           d="M672.372 285.747C672.268 291.746 667.325 296.526 661.333 296.429L614.143 295.649C608.144 295.552 603.364 290.609 603.468 284.61C603.565 278.611 608.508 273.831 614.508 273.927L661.697 274.708C667.696 274.812 672.476 279.755 672.38 285.747H672.372Z"
           fill="white"/>
-        <path d="M603.454 273.562L669.376 275.064" stroke="black" stroke-width="3.93247" stroke-linecap="round"
-              stroke-linejoin="round"/>
-        <path d="M605.327 294.913L669.376 296.043" stroke="black" stroke-width="3.93247" stroke-linecap="round"
-              stroke-linejoin="round"/>
+        <path d="M603.454 273.562L669.376 275.064" stroke="black" strokeWidth="3.93247" strokeLinecap="round"
+              strokeLinejoin="round"/>
+        <path d="M605.327 294.913L669.376 296.043" stroke="black" strokeWidth="3.93247" strokeLinecap="round"
+              strokeLinejoin="round"/>
         <path
+          className="animate-slide-x"
           d="M629.524 285.175C629.524 291.211 624.112 296.102 617.422 296.102C610.731 296.102 605.327 291.211 605.327 285.175C605.327 279.138 610.739 274.247 617.422 274.247C624.105 274.247 629.524 279.138 629.524 285.175Z"
           fill="black"/>
         <path
           d="M756.701 285.747C756.798 291.746 761.741 296.526 767.74 296.429L814.93 295.649C820.929 295.552 825.709 290.609 825.612 284.61C825.508 278.611 820.565 273.831 814.573 273.927L767.383 274.708C761.384 274.812 756.605 279.755 756.701 285.747Z"
           fill="white"/>
-        <path d="M825.62 273.562L759.697 275.064" stroke="black" stroke-width="3.93247" stroke-linecap="round"
-              stroke-linejoin="round"/>
-        <path d="M823.739 294.913L759.697 296.043" stroke="black" stroke-width="3.93247" stroke-linecap="round"
-              stroke-linejoin="round"/>
+        <path d="M825.62 273.562L759.697 275.064" stroke="black" strokeWidth="3.93247" strokeLinecap="round"
+              strokeLinejoin="round"/>
+        <path d="M823.739 294.913L759.697 296.043" stroke="black" strokeWidth="3.93247" strokeLinecap="round"
+              strokeLinejoin="round"/>
         <path
+          className="animate-slide-x"
           d="M758.649 284.52C758.649 290.557 764.068 295.448 770.744 295.448C777.419 295.448 782.846 290.557 782.846 284.52C782.846 278.484 777.427 273.593 770.744 273.593C764.061 273.593 758.649 278.484 758.649 284.52Z"
           fill="black"/>
         <path d="M645.395 247.708C645.395 247.708 648.889 234.721 664.373 235.97" stroke="black"
-              stroke-width="3.93247" stroke-linecap="round" stroke-linejoin="round"/>
+              strokeWidth="3.93247" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M778.051 254.882C778.051 254.882 770.64 266.099 756.337 260.033" stroke="black"
-              stroke-width="3.93247" stroke-linecap="round" stroke-linejoin="round"/>
+              strokeWidth="3.93247" strokeLinecap="round" strokeLinejoin="round"/>
         <path
           d="M732.192 341.315C733.76 347.529 725.449 352.86 714.492 352.86C703.535 352.86 695.454 348.094 692.503 341.315C687.559 329.956 698.933 318.382 712.344 329.703C721.212 337.197 730.452 334.446 732.184 341.315H732.192Z"
-          fill="black" stroke="black" stroke-width="1.96252" stroke-linecap="round" stroke-linejoin="round"/>
+          fill="black" stroke="black" strokeWidth="1.96252" strokeLinecap="round" strokeLinejoin="round"/>
         <path
           d="M692.763 330.699C692.674 330.699 692.592 330.714 692.503 330.714C691.038 333.695 690.86 337.516 692.518 341.315C694.718 346.37 699.773 350.302 706.746 351.975C707.549 350.124 707.995 348.079 707.995 345.931C707.995 337.516 701.171 330.699 692.763 330.699Z"
-          fill="#FF7B7B" stroke="black" stroke-width="1.96252" stroke-linecap="round" stroke-linejoin="round"/>
+          fill="#FF7B7B" stroke="black" strokeWidth="1.96252" strokeLinecap="round" strokeLinejoin="round"/>
         <path
           d="M671.327 475.485C682.173 466.248 682.034 448.272 671.016 435.335C659.998 422.398 642.273 419.399 631.428 428.636C620.582 437.873 620.721 455.849 631.739 468.786C642.757 481.723 660.481 484.722 671.327 475.485Z"
           fill="#1AADB5"/>
@@ -729,9 +731,9 @@ export default function FooterBg() {
           fill="#F25C67"/>
         <path
           d="M466.472 244.876C464.314 249.093 460.217 252.235 455.173 252.969C446.9 254.174 439.218 248.444 438.013 240.172C436.809 231.899 442.539 224.217 450.812 223.013C456.169 222.233 461.279 224.361 464.54 228.204"
-          stroke="white" stroke-width="3.63901" stroke-miterlimit="10" stroke-linecap="round"/>
-        <path d="M468.516 235.73L459.027 237.112" stroke="white" stroke-width="3.63901" stroke-miterlimit="10"
-              stroke-linecap="round"/>
+          stroke="white" strokeWidth="3.63901" strokeMiterlimit="10" strokeLinecap="round"/>
+        <path d="M468.516 235.73L459.027 237.112" stroke="white" strokeWidth="3.63901" strokeMiterlimit="10"
+              strokeLinecap="round"/>
         <g className="animate-float">
           <path
             d="M170.911 226.564L160.441 222.309C157.233 221.005 154.872 217.601 154.121 212.391C152.719 202.66 157.502 189.957 164.94 183.037L175.411 187.293C167.972 194.213 163.189 206.916 164.591 216.647C165.342 221.856 167.703 225.26 170.911 226.564Z"

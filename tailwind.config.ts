@@ -71,6 +71,14 @@ export default {
           "0%, 100%": { transform: "rotate(10deg)" },
           "50%": { transform: "rotate(-10deg)" },
         },
+        "slide-x": {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(calc(40px))" },
+        },
+        "slide-x-bg": {
+          from: { width: "0%" },
+          to: { width: "max-content" },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
@@ -78,6 +86,8 @@ export default {
         float: "float 3s ease-in-out infinite",
         "spin-bounce": "spin-bounce 1s ease-in-out infinite",
         "spin-debounce": "spin-debounce 1s ease-in-out infinite",
+        "slide-x": "slide-x 2s linear infinite alternate",
+        "slide-x-bg": "slide-x-bg 3s ease-out forwards",
       },
     },
   },

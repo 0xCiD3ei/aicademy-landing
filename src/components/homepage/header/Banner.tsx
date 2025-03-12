@@ -2,8 +2,71 @@ import NextImage from '@/components/NextImage';
 
 import Rabbit from '@/assets/homepage/rabbit.png';
 import TouchHand from '@/assets/homepage/touch-hand.png';
+import {useEffect, useState} from "react";
 
 export default function Banner() {
+  const [displayedHTML, setDisplayedHTML] = useState("")
+
+  useEffect(() => {
+    const paragraphs = [
+      '<p>👋 Hi! I\'m your <span class="font-bold">AI Mentor</span>, here</p>',
+      "<p>to guide you through interactive learning.</p>",
+      "<p>Stuck on a concept? Need examples?</p>",
+      "<p>Just summon me—I'm ready to help!</p>",
+    ]
+    
+    let currentParagraphIndex = 0
+    let currentIndex = 0
+    let typingInterval: NodeJS.Timeout
+    
+    const typeNextChar = () => {
+      if (currentParagraphIndex < paragraphs.length) {
+        const currentParagraph = paragraphs[currentParagraphIndex]
+        
+        if (currentIndex < currentParagraph.length) {
+          const nextChar = currentParagraph[currentIndex]
+          let chunk = ""
+          
+          if (nextChar === "<") {
+            const tagEndIndex = currentParagraph.indexOf(">", currentIndex)
+            if (tagEndIndex !== -1) {
+              chunk = currentParagraph.substring(currentIndex, tagEndIndex + 1)
+              currentIndex = tagEndIndex + 1
+            } else {
+              chunk = nextChar
+              currentIndex++
+            }
+          } else {
+            chunk = nextChar
+            currentIndex++
+          }
+          
+          setDisplayedHTML((prev) => prev + chunk)
+        } else {
+          currentParagraphIndex++
+          currentIndex = 0
+          
+          clearInterval(typingInterval)
+          setTimeout(() => {
+            typingInterval = setInterval(typeNextChar, 50)
+          }, 1000)
+        }
+      } else {
+        clearInterval(typingInterval)
+      }
+    }
+    
+    const startTimeout = setTimeout(() => {
+      typingInterval = setInterval(typeNextChar, 50)
+    }, 1000)
+    
+    
+    return () => {
+      clearTimeout(startTimeout)
+      clearInterval(typingInterval)
+    }
+  }, [])
+  
   return (
     <div className='w-full relative'>
       <div className='pl-[154px]'>
@@ -77,21 +140,20 @@ export default function Banner() {
               fill='#61B0B9'
             />
           </svg>
-          <div className='absolute top-60 left-20 -translate-y-1/2 h-[196px] font-comic-sans-ms text-[30px] text-[#005963] leading-[50px]'>
-            <p>
-              👋 Hi! I’m your <span className='font-bold'>AI Mentor</span>, here
-            </p>
-            <p>to guide you through interactive learning.</p>
-            <p>Stuck on a concept? Need examples?</p>
-            <p>Just summon me—I’m ready to help!</p>
+          <div
+            className='absolute top-60 left-20 -translate-y-1/2 h-[196px] font-comic-sans-ms text-[30px] text-[#005963] leading-[50px]'>
+            <div className="inline" dangerouslySetInnerHTML={{__html: displayedHTML}}/>
+            {/*<span*/}
+            {/*  className={`${cursorVisible ? "opacity-100" : "opacity-0"} border-r-2 border-primary h-7 inline-block`}*/}
+            {/*></span>*/}
           </div>
           <div className='absolute -top-[28%] right-[24%]'>
-            <NextImage src={Rabbit} alt='rabbit' width={201} height={243} />
+            <NextImage src={Rabbit} alt='rabbit' width={201} height={243}/>
           </div>
         </div>
       </div>
       <div className='absolute -bottom-[25%] right-0'>
-        <NextImage src={TouchHand} alt='touch-hand' width={1006} height={968} />
+        <NextImage src={TouchHand} alt='touch-hand' width={1006} height={968}/>
       </div>
     </div>
   );
