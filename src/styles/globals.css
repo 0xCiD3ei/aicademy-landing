@@ -29,6 +29,8 @@
   --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   /* #endregion  /**======== Primary Color =========== */
+  --color-faded: 243 243 243  /* #F3F3F3 */
+
 }
 
 @layer base {
@@ -120,4 +122,28 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
+}
+
+
+
+[data-scroll-container] {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+[data-scroll-section] {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.box {
+  width: 50vw;
+  height: 50vh;
+  margin: 20px;
+  background-color: red;
 }

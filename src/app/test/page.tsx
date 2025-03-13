@@ -23,7 +23,6 @@ const SmoothScrollHero = () => {
             syncTouch: true,
         }}
       >
-        <Nav />
         <Hero />
         <Schedule />
       </ReactLenis>

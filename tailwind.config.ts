@@ -35,6 +35,10 @@ export default {
           DEFAULT: 'rgb(var(--tw-color-popover))',
           foreground: 'rgb(var(--tw-color-popover-foreground))',
         },
+        faded: {
+          DEFAULT: 'rgb(var(--color-faded))',
+          foreground: 'rgb(var(--color-faded-foreground))',
+        },
         border: 'rgb(var(--tw-color-border))',
         "btn-hover": 'rgb(var(--tw-color-button-hover))',
         dark: '#222222',
