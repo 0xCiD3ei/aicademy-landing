@@ -79,6 +79,12 @@ export default {
           from: { width: "0%" },
           to: { width: "max-content" },
         },
+        dotPulse: {
+          "0%, 100%": { opacity: "0.3" },
+          "25%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+          "75%": { opacity: "0.5" },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
@@ -88,6 +94,9 @@ export default {
         "spin-debounce": "spin-debounce 1s ease-in-out infinite",
         "slide-x": "slide-x 2s linear infinite alternate",
         "slide-x-bg": "slide-x-bg 3s ease-out forwards",
+        dot1: "dotPulse 1.5s infinite ease-in-out",
+        dot2: "dotPulse 1.5s infinite ease-in-out 0.2s",
+        dot3: "dotPulse 1.5s infinite ease-in-out 0.4s",
       },
     },
   },
