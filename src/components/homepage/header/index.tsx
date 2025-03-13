@@ -5,8 +5,8 @@ import Logo from '@/assets/homepage/logo.svg';
 export default function Header() {
   return (
     <>
-      <header className='mt-5 px-[72px] w-full h-[92px] flex items-center justify-center'>
-        <div className='bg-secondary px-5 rounded-xl flex items-center justify-between h-full w-full'>
+      <header className='lg:mt-5 lg:px-[72px] w-full h-[60px] md:h-[92px] flex items-center justify-center'>
+        <div className='bg-[#F3F3F3] px-5 rounded-xl flex items-center justify-between h-full w-full'>
           <div>
             <Logo className='w-[220px] h-[52px]' />
           </div>
@@ -15,7 +15,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div className='mt-[50px] mb-12'>
+      <div className='mt-10 lg:mt-[50px] mb-12'>
         <Banner />
       </div>
     </>

@@ -69,8 +69,8 @@ export default function Banner() {
   
   return (
     <div className='w-full relative'>
-      <div className='pl-[154px]'>
-        <div className='font-dela-gothic-one text-primary-foreground text-[60px] leading-[84px]'>
+      <div className='px-5 sm:pl-10 lg:pl-[154px]'>
+        <div className='font-dela-gothic-one text-primary-foreground text-[40px] md:text-[60px] leading-[150%]'>
           <p>Learn AI</p>
           <p>The Smart Way !!!</p>
         </div>
@@ -78,8 +78,8 @@ export default function Banner() {
           Interactive and gamified learning with an AI Mentor ready for instant,
           context-aware support anytime!
         </div>
-        <div className='mt-10'>
-          <div className='cursor-pointer bg-primary h-14 rounded-full px-2 py-4 max-w-max flex items-center gap-2 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)] hover:bg-btn-hover'>
+        <div className='mt-8 lg:mt-10'>
+          <div className='cursor-pointer bg-primary h-14 rounded-xl px-2 py-4 w-full sm:max-w-max flex items-center justify-center gap-2 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)] hover:bg-btn-hover'>
             <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -115,7 +115,7 @@ export default function Banner() {
             </span>
           </div>
         </div>
-        <div className='mt-10 relative max-w-max'>
+        <div className='hidden lg:block mt-10 relative max-w-max'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='736'
@@ -152,7 +152,7 @@ export default function Banner() {
           </div>
         </div>
       </div>
-      <div className='absolute -bottom-[25%] right-0'>
+      <div className='hidden absolute -bottom-[25%] right-0'>
         <NextImage src={TouchHand} alt='touch-hand' width={1006} height={968}/>
       </div>
     </div>
