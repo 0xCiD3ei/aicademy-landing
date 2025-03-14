@@ -40,7 +40,7 @@ export default {
           foreground: 'rgb(var(--color-faded-foreground))',
         },
         border: 'rgb(var(--tw-color-border))',
-        "btn-hover": 'rgb(var(--tw-color-button-hover))',
+        'btn-hover': 'rgb(var(--tw-color-button-hover))',
         dark: '#222222',
       },
       keyframes: {
@@ -64,24 +64,29 @@ export default {
           },
         },
         float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(50px)" },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(50px)' },
         },
-        "spin-bounce": {
-          "0%, 100%": { transform: "rotate(-10deg)" },
-          "50%": { transform: "rotate(10deg)" },
+        'float-ease': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(20px)' },
         },
-        "spin-debounce": {
-          "0%, 100%": { transform: "rotate(10deg)" },
-          "50%": { transform: "rotate(-10deg)" },
+        'spin-bounce': {
+          '0%, 100%': { transform: 'rotate(-10deg)' },
+          '50%': { transform: 'rotate(10deg)' },
+        },
+        'spin-debounce': {
+          '0%, 100%': { transform: 'rotate(10deg)' },
+          '50%': { transform: 'rotate(-10deg)' },
         },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
-        float: "float 3s ease-in-out infinite",
-        "spin-bounce": "spin-bounce 1s ease-in-out infinite",
-        "spin-debounce": "spin-debounce 1s ease-in-out infinite",
+        float: 'float 3s ease-in-out infinite',
+        'float-ease': 'float-ease 3s ease-in-out infinite',
+        'spin-bounce': 'spin-bounce 1s ease-in-out infinite',
+        'spin-debounce': 'spin-debounce 1s ease-in-out infinite',
       },
     },
   },

@@ -1,0 +1,9 @@
+{
+    "interactive_challenge": {
+        "title": "Interactive Challenge",
+        "description": "Dive into hands-on lessons with real-time feedback, gamified challenges."    ,
+        "images": [{
+        "url": "http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finteractive-1.4652a874.png&w=640&q=75" 
+        } ]
+    }
+}

@@ -15,7 +15,7 @@ export default function HomePage() {
       <div className='main max-w-screen'>
         {/* <Section1 /> */}
         <InteractiveChallenge />
-        {/* <Section3 /> */}
+        <Section3 />
         {/* <Section4 /> */}
       </div>
       <Footer />

@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85901952-6d46-4494-8760-859ebdc4e352" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/about-us/_components/ContentRightSide.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/about-us/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homepage/interactive-challenge/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/aicedemy-landing.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/css.code-snippets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/typescriptreact.code-snippets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/test/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/test/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/section-3/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/section-3/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +98,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "prettierjs.PrettierConfiguration.Package": "/home/phuoc/Icetea/aicedemy-landing/node_modules/prettier",
-    "settings.editor.selected.configurable": "com.sourcegraph.cody.config.ui.CodyConfigurable",
+    "settings.editor.selected.configurable": "configurable.tailwindcss",
     "ts.external.directory.path": "/home/phuoc/Icetea/aicedemy-landing/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -142,6 +130,9 @@
       <workItem from="1741749249359" duration="11737000" />
       <workItem from="1741767946481" duration="28000" />
       <workItem from="1741833689986" duration="1172000" />
+      <workItem from="1741920505955" duration="509000" />
+      <workItem from="1741921023127" duration="28000" />
+      <workItem from="1741921201807" duration="1403000" />
     </task>
     <servers />
   </component>

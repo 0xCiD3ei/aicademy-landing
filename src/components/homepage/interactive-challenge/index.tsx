@@ -1,15 +1,17 @@
 'use client';
 
+import Image from 'next/image';
+import { HTMLProps, PropsWithChildren } from 'react';
 import Carousel from 'react-multi-carousel';
 
-import NextImage from '@/components/NextImage';
+import 'react-multi-carousel/lib/styles.css';
+
+import { cn } from '@/lib/utils';
 
 import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
-import { Fragment, HTMLProps, PropsWithChildren } from 'react';
-import 'react-multi-carousel/lib/styles.css';
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
+
+const images = [Interactive1, Interactive2, Interactive1, Interactive2];
 
 export default function InteractiveChallenge() {
   return (
@@ -95,16 +97,7 @@ const ImageCarouselMobile = () => {
         customButtonGroup={<ButtonGroup />}
         arrows={false}
       >
-        {[
-          Interactive1,
-          Interactive2,
-          Interactive2,
-          Interactive2,
-          Interactive2,
-          Interactive2,
-          Interactive2,
-          Interactive2,
-        ].map((img, index) => {
+        {images.map((img, index) => {
           return (
             <img
               key={index}
