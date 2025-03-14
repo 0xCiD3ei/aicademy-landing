@@ -10,7 +10,7 @@ export default function Header() {
           <div>
             <Logo className='w-[220px] h-[52px]' />
           </div>
-          <div className='cursor-pointer text-base text-white font-semibold bg-primary rounded-lg px-[29px] py-2.5 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)] hover:bg-btn-hover'>
+          <div className='cursor-pointer text-base text-white font-semibold bg-primary rounded-lg px-[29px] py-2.5 drop-shadow-[3px_3px_0px_rgba(11,117,124,1)] hover:bg-btn-hover'>
             Login
           </div>
         </div>

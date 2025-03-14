@@ -79,7 +79,7 @@ export default function Banner() {
           context-aware support anytime!
         </div>
         <div className='mt-8 lg:mt-10'>
-          <div className='cursor-pointer bg-primary h-14 rounded-xl px-2 py-4 w-full sm:max-w-max flex items-center justify-center gap-2 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)] hover:bg-btn-hover'>
+          <div className='cursor-pointer bg-primary h-14 rounded-xl px-2 py-4 w-full sm:max-w-max flex items-center justify-center gap-2 drop-shadow-[3px_3px_0px_rgba(11,117,124,1)] hover:bg-btn-hover'>
             <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
