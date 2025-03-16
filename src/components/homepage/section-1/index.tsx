@@ -72,7 +72,7 @@ export default function Section1() {
       <div className="relative bg-secondary xl:pt-[286px] xl:pb-[300px] overflow-hidden [clip-path:polygon(0%_0%,100%_0%, 100%_100%)]" >
         <div className="absolute top-0 left-0 bg-[url(/images/section-bg.png)] bg-center w-full h-full" />
         <div className="absolute top-10 -left-10 flex items-center overflow-hidden rotate-[2.55deg]">
-          <motion.div ref={topRowRef} style={{ x: xTop }} className="flex items-center overflow-scroll">
+          <motion.div ref={topRowRef} style={{ x: xTop }} className="flex items-center overflow-hidden">
             {
               [1, 2, 3, 4, 5, 6].map(ele => (
                 <div key={ele} className="py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]">
@@ -282,7 +282,7 @@ function MenuDialog() {
 function ChatBotDialog() {
   return (
     <div
-      className="absolute -bottom-1/2 -right-1/4 md:-bottom-1/2 md:right-0 xl:-bottom-2/3 xl:-right-1/3 -translate-x-1/2 -translate-y-1/2 w-[360px] xl:w-[420px] h-auto bg-[#E1EEE9] rounded-3xl drop-shadow-[0px_3px_7px_rgba(0,0,0,0.1)]">
+      className="absolute bottom-[40px] left-[60%] md:right-0 xl:-bottom-2/3 xl:-right-1/3  -translate-x-1/2 xl:-translate-y-1/2 w-[300px] sm:w-[360px] xl:w-[420px] h-auto bg-[#E1EEE9] rounded-3xl drop-shadow-[0px_3px_7px_rgba(0,0,0,0.1)]">
       <div className="flex flex-col gap-2 xl:gap-4 px-3 py-4 xl:py-6 xl:px-4">
         <div className="flex items-center gap-[7px] xl:gap-1.5">
           <div className="w-4 h-4 xl:w-6 xl:h-6 rounded-full bg-[#E1EEE9] border border-[#000000]/10"/>
@@ -342,14 +342,19 @@ function ChatBotDialog() {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-1 right-2 translate-x-1/2 translate-y-1/2">
+      <div className="absolute hidden xl:block bottom-1 right-2 translate-x-1/2 translate-y-1/2">
         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="36" viewBox="0 0 39 36" fill="none">
           <path
             d="M0.741491 13.9647L26.1568 0.0155314L32.4495 17.8381L38.7423 35.6607L19.7419 24.8127L0.741491 13.9647Z"
             fill="#E1EEE9"/>
         </svg>
       </div>
-      <div className="absolute bottom-0 -right-10 xl:bottom-10 xl:-right-[120px] translate-x-1/2 translate-y-1/2">
+      <div className="absolute xl:hidden bottom-1 -left-3 translate-x-1/2 translate-y-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
+          <path d="M17.8982 6.40105L6.51378 0.152685L3.69501 8.1361L0.876252 16.1195L9.38725 11.2603L17.8982 6.40105Z" fill="#E1EEE9"/>
+        </svg>
+      </div>
+      <div className="absolute -bottom-10 -left-1/3 xl:bottom-10 xl:-right-[150%] translate-x-1/2 translate-y-1/2">
         <img alt="rabbit" src={Rabbit.src} className="w-[65px] h-[87px] xl:w-[175px] xl:h-[212px]" />
       </div>
     </div>
