@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85901952-6d46-4494-8760-859ebdc4e352" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tailwindcss.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/section-3/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/roadmap/RoadIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/roadmap/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/roadmap/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ui/homepage" />
+        <entry key="$PROJECT_DIR$" value="f8115f99b178b0b3b307be2fe53aa7510b488906" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,11 +42,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="ui/test" />
-                    <option name="lastUsedInstant" value="1741833746" />
+                    <option name="lastUsedInstant" value="1742208861" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="ui/roadmap" />
+                    <option name="lastUsedInstant" value="1742207658" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="ui/homepage" />
-                    <option name="lastUsedInstant" value="1741833730" />
+                    <option name="lastUsedInstant" value="1742207614" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -77,6 +81,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript Debug.localhost:3000.executor": "Debug",
     "RunOnceActivity.AccountsToCodyMigration": "true",
     "RunOnceActivity.ChatTagsLlmMigration": "true",
     "RunOnceActivity.CodyAccountHistoryMigration": "true",
@@ -101,7 +106,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "/home/phuoc/Icetea/aicedemy-landing",
     "prettierjs.PrettierConfiguration.Package": "/home/phuoc/Icetea/aicedemy-landing/node_modules/prettier",
-    "settings.editor.selected.configurable": "configurable.tailwindcss",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/phuoc/Icetea/aicedemy-landing/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -110,6 +115,17 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/test" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -138,6 +154,7 @@
       <workItem from="1741921201807" duration="1403000" />
       <workItem from="1742178918613" duration="42000" />
       <workItem from="1742202774509" duration="353000" />
+      <workItem from="1742208654473" duration="337000" />
     </task>
     <servers />
   </component>

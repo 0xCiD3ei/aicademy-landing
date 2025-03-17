@@ -6,7 +6,7 @@ import { useWindowSize } from 'usehooks-ts';
 
 import NextImage from '@/components/NextImage';
 
-import RoadIcon from '@/assets/homepage/RoadIcon';
+import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
 
