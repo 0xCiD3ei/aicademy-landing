@@ -7,16 +7,16 @@ import YoutubeIcon from '@/assets/homepage/youtube.svg';
 export default function Footer() {
   return (
     <footer className='mt-20'>
-      <div className='flex items-center justify-center flex-col gap-8'>
-        <h1 className='font-dela-gothic-one text-black text-[64px] leading-[76.8px] text-center'>
+      <div className='flex items-center justify-center flex-col gap-5 lg:gap-8 mb-5 lg:mb-0'>
+        <h1 className='font-dela-gothic-one text-primary-foreground text-[32px] md:text-[48px] lg:text-[64px] leading-[120%] text-center'>
           Let’s Start Your
           <p className='text-primary'>AI Learning Journey !</p>
         </h1>
-        <p className='text-primary-foreground text-2xl'>
-          No prior experience needed. Learn at your own pace.
+        <p className='text-center text-primary-foreground text-sm md:text-xl lg:text-2xl'>
+          Give badges, unlock achievements, and earn blockchain-verified NFT Certificates.
         </p>
-        <div className='cursor-pointer bg-primary h-14 rounded-full px-2 py-4 max-w-max flex items-center gap-2 drop-shadow-[3px_3px_0px_rgba(198,198,198,1)]'>
-          <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center animate-spin-bounce'>
+        <div className='cursor-pointer bg-primary h-14 rounded-xl lg:rounded-full px-2 py-4 max-w-max flex items-center gap-2 drop-shadow-[3px_3px_0px_rgba(11,117,124,1)]'>
+          <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='24'
@@ -53,22 +53,26 @@ export default function Footer() {
       </div>
       <FooterBg />
       <div className='border-y-4 border-border'>
-        <div className='flex items-center justify-center w-full'>
-          <div className='flex items-center justify-center bg-[#007880] h-[100px] border-r-4 border-border flex-1'>
-            <FacebookIcon width={40} height={40} />
+        <div className='flex items-center justify-center w-full flex-col lg:flex-row'>
+          <div className="flex items-center justify-center w-full">
+            <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-b-4 lg:border-b-0 border-r-4 border-border flex-1'>
+              <FacebookIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+            </div>
+            <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-b-4 lg:border-b-0 lg:border-r-4 border-border flex-1'>
+              <TwitterIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+            </div>
           </div>
-          <div className='flex items-center justify-center bg-[#007880] h-[100px] border-r-4 border-border flex-1'>
-            <TwitterIcon width={40} height={40} />
-          </div>
-          <div className='flex items-center justify-center bg-[#007880] h-[100px] border-r-4 border-border flex-1'>
-            <TelegramIcon width={40} height={40} />
-          </div>
-          <div className='flex items-center justify-center bg-[#007880] h-[100px] flex-1'>
-            <YoutubeIcon width={40} height={40} />
+          <div className="flex items-center justify-center w-full">
+            <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-r-4 border-border flex-1'>
+              <TelegramIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+            </div>
+            <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] flex-1'>
+              <YoutubeIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+            </div>
           </div>
         </div>
       </div>
-      <div className='flex items-center justify-center w-full h-[100px] border-b-4 border-border text-border bg-[#007880] font-medium text-2xl leading-7'>
+      <div className='flex items-center justify-center w-full h-[52px] lg:h-[100px] border-b-4 border-border text-border bg-[#007880] font-medium text-sm md:text-base lg:text-2xl leading-[120%] text-center'>
         © 2025 Autonomous School - AI-Driven Future of Education
       </div>
     </footer>

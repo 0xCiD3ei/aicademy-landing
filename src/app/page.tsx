@@ -10,13 +10,13 @@ import Section3 from '@/components/homepage/roadmap';
 
 export default function HomePage() {
   return (
-    <main className='overflow-x-hidden max-w-screen'>
-      {/* <Header /> */}
-      <div className='main max-w-screen'>
-        {/* <Section1 /> */}
+    <main>
+      <Header />
+      <div className='main'>
+        <Section1 />
         <InteractiveChallenge />
         <Section3 />
-        {/* <Section4 /> */}
+        <Section4 />
       </div>
       <Footer />
     </main>

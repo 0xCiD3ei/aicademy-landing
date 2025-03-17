@@ -9,13 +9,13 @@ import Img7 from '@/assets/homepage/section4-7.gif';
 
 export default function Section4() {
   return (
-    <div className='bg-secondary rounded-ss-[100px] rounded-se-[100px] py-20 px-[72px] flex items-center justify-center flex-col'>
-      <h2 className='font-dela-gothic-one text-primary-foreground text-[54px] leading-[64.8px] text-center'>
+    <div className='bg-secondary rounded-none xl:rounded-ss-[100px] xl:rounded-se-[100px] p-5 md:py-10 md:px-10 xl:py-20 xl:px-[72px] flex items-center justify-center flex-col'>
+      <h2 className='font-dela-gothic-one text-primary-foreground text-[32px] md:text-[48px] xl:text-[54px] leading-[120%] xl:text-center'>
         Equip yourselves with AI Skills today!
       </h2>
-      <div className='mt-10 grid grid-cols-2'>
+      <div className='mt-5 md:mt-8 xl:mt-10 grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-0'>
         <div className='flex items-center flex-col gap-6'>
-          <div className='w-[658px] h-[408px] rounded-[20px]'>
+          <div className='w-full h-full xl:w-[658px] xl:h-[408px] rounded-[20px]'>
             <video
               autoPlay
               loop
@@ -27,33 +27,31 @@ export default function Section4() {
             </video>
           </div>
 
-          <div className='flex items-center justify-center gap-6'>
-            <NextImage alt='img-2' src={Img2} width={317} height={412} />
+          <div className='flex items-center justify-center flex-col md:flex-row gap-6'>
+            <img alt='img-2' src={Img2.src} width={317} height={412} />
             <div className='flex items-center justify-center flex-col gap-6'>
-              <NextImage alt='img-3' src={Img3} width={312} height={108} />
-              <NextImage alt='img-4' src={Img4} width={312} height={263} />
+              <img alt='img-3' src={Img3.src} width={312} height={108} />
+              <img alt='img-4' src={Img4.src} width={312} height={263} />
             </div>
           </div>
         </div>
         <div className='flex items-center justify-end flex-col gap-6'>
-          <div className='flex items-end justify-center gap-6 '>
-            <NextImage alt='img-5' src={Img5} width={312} height={408} />
+          <div className='flex items-center md:items-end justify-center flex-col md:flex-row gap-6 '>
+            <img alt='img-5' src={Img5.src} width={312} height={408} />
             <div className='flex justify-center flex-col gap-6'>
-              <NextImage alt='img-6' src={Img6} width={263} height={168} />
+              <img alt='img-6' src={Img6.src} width={263} height={168} />
               <div className='rounded-[20px] border border-[#D9D9D9]'>
-                <NextImage
+                <img
                   alt='img-7'
-                  src={Img7}
+                  src={Img7.src}
                   width={263}
                   height={236}
-                  classNames={{
-                    image: 'rounded-[20px]',
-                  }}
+                  className="rounded-[20px]"
                 />
               </div>
             </div>
           </div>
-          <div className='w-[611px] h-[345.7px] rounded-[20px]'>
+          <div className='w-full h-full xl:w-[611px] xl:h-[345.7px] rounded-[20px]'>
             <video
               autoPlay
               loop
