@@ -1,58 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import ReactLenis from 'lenis/dist/lenis-react';
-import { useEffect, useRef, useState } from 'react';
-
-import NextImage from '@/components/NextImage';
-
-import RoadIcon from '@/assets/homepage/RoadIcon';
-import Img1 from '@/assets/homepage/section3-1.png';
-import Img2 from '@/assets/homepage/section3-2.png';
-
-import { ContentModal } from '../interactive-challenge/ContentModal';
-
-export default function Section3() {
-  return (
-    // <ReactLenis
-    //   root
-    //   options={{
-    //     // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
-    //     lerp: 0.01,
-    //     // infinite: true,
-    //     syncTouch: true,
-    //   }}
-    // >
-    <div className='mb-20'>
-      <div className='flex items-center justify-center my-[158px]'>
-        <NextImage alt='img-1' src={Img1} width={622} height={433} />
-        <div className='flex flex-col text-primary-foreground'>
-          <h3 className='font-dela-gothic-one text-5xl tracking-[1%] capitalize w-[313px]'>
-            Ultimate motivation
-          </h3>
-          <p className='mt-10 w-[520px] text-2xl tracking-[1%]'>
-            Give badges, unlock achievements, and earn blockchain-verified NFT
-            Certificates
-          </p>
-        </div>
-      </div>
-      <div className='relative w-full'>
-        <div className='flex justify-center'>
-          <div className='bg-secondary w-full max-w-[1320px] rounded-[40px] py-[64px] pb-[140px] font-dela-gothic-one flex flex-col gap-5'>
-            <h3 className='text-primary-foreground text-center text-2xl font-bold tracking-[2%] sm:px-[89px]'>
-              What do you do in{' '}
-              <span className='sm:text-[80px] text-5xl leading-[120%] block sm:inline'>
-                aicademy ?
-              </span>
-            </h3>
-            <CenterImage />
-          </div>
-        </div>
-      </div>
-    </div>
-    // </ReactLenis>
-  );
-}
+import { useAnimation, motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 function LandmarkNumberOne({ className }: { className?: string }) {
   return (
@@ -107,6 +56,12 @@ function LandmarkNumberTwo({
   className?: string;
   color: string;
 }) {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ offsetDistance: ['0%', '100%'] });
+  }, [controls]);
+
   return (
     <svg
       className={className}
@@ -116,35 +71,35 @@ function LandmarkNumberTwo({
       viewBox='0 0 131 180'
       fill='none'
     >
-      <path
+      <motion.path
         d='M81.926 148.06L95.4697 140.186L75.4582 171.593L61.9146 179.463L81.926 148.06Z'
         fill={color || '#8F8F8F'}
       />
-      <path
+      <motion.path
         d='M23.5747 11.7427L37.1184 3.87178C47.0361 -1.89178 60.7696 -1.07744 75.9282 7.67381L62.3845 15.5447C47.2232 6.79073 33.4897 5.97915 23.5747 11.7427Z'
         fill={color || '#8F8F8F'}
       />
-      <path
+      <motion.path
         d='M114.35 136.786L100.807 144.657C110.598 138.968 116.672 126.871 116.719 109.685C116.818 75.0709 92.4929 32.924 62.3821 15.5398L75.9257 7.66895C106.036 25.0532 130.362 67.2 130.263 101.814C130.216 119.001 124.144 131.094 114.35 136.786Z'
         fill={color || '#8F8F8F'}
       />
-      <path
+      <motion.path
         d='M62.3824 15.5424C92.4932 32.9267 116.818 75.0736 116.719 109.688C116.645 136.209 102.224 150.605 81.9289 148.052L61.9174 179.459L39.3804 122.117C20.5986 101.374 7.59417 72.0171 7.6657 46.7234C7.76199 12.1118 32.2606 -1.84727 62.3824 15.5424Z'
         fill={color || '#AFB3B2'}
       />
-      <path
+      <motion.path
         d='M30.5394 27.2738L33.2492 25.7001C41.0211 21.1828 51.7861 21.8183 63.6654 28.6768L60.9556 30.2504C49.0764 23.392 38.3113 22.7564 30.5394 27.2738Z'
         fill='#D3CFCF'
       />
-      <path
+      <motion.path
         d='M93.8068 129.898L91.097 131.472C98.7698 127.012 103.526 117.532 103.565 104.051C103.642 76.9256 84.5631 43.8793 60.9559 30.2504L63.6657 28.6768C87.2729 42.3057 106.352 75.3519 106.275 102.478C106.236 115.958 101.48 125.439 93.8068 129.898Z'
         fill='#D3CFCF'
       />
-      <path
+      <motion.path
         d='M91.1234 131.425C107.79 121.739 107.744 90.5599 91.02 61.7854C74.2964 33.0108 47.2284 17.5369 30.5619 27.2234C13.8954 36.9098 13.9418 68.0886 30.6653 96.8631C47.3889 125.638 74.4569 141.112 91.1234 131.425Z'
         fill='white'
       />
-      <path
+      <motion.path
         d='M58.7114 43.7865C62.6124 46.0397 65.9468 49.6326 68.6951 54.5984C71.427 59.5531 72.8025 64.2822 72.7888 68.7665C72.775 73.3994 71.8589 77.3417 70.0569 80.6073C69.0665 82.4285 66.7803 85.2291 63.1681 88.9706C62.197 90.005 60.739 91.6502 58.8104 93.8951L57.19 95.7438C56.1528 96.946 55.3578 97.9337 54.8241 98.6655C54.5655 99.0534 54.4334 99.312 54.4334 99.4248L71.9607 109.543L71.9332 119.585L43.5555 103.202L43.5831 93.7906C43.5831 93.5677 44.2323 92.6984 45.5281 91.1467C46.1444 90.4617 46.8238 89.7052 47.5859 88.8633L49.9189 86.3681C51.2807 85.02 53.4183 82.8219 56.3317 79.7902C59.0855 76.9621 61.1434 74.1614 62.5079 71.3498C63.6276 69.0636 64.1833 66.6564 64.1916 64.1199C64.1971 62.0621 63.7019 60.0153 62.6895 57.9822C61.5973 55.8308 60.1805 54.2517 58.439 53.2448C55.9548 51.8115 54.1941 52.4442 53.1376 55.1376C52.7965 56.0179 52.615 57.2119 52.6095 58.7498L52.6011 61.344L43.8141 56.271L43.8197 54.4746C43.8389 48.0452 45.3685 43.9929 48.4085 42.3505C51.0331 40.8566 54.4554 41.3298 58.7114 43.7865Z'
         fill={color || '#AFB3B2'}
       />
@@ -256,146 +211,9 @@ function LandmarkNumberFour({
   );
 }
 
-const CenterImage = () => {
-  const [hasScaled, setHasScaled] = useState(false);
-  const [showLevel1, setShowLevel1] = useState(false);
-  const [showLevel2, setShowLevel2] = useState(false);
-  const [showLevel3, setShowLevel3] = useState(false);
-  const [showLevel4, setShowLevel4] = useState(false);
-  const [showScrollbar, setShowScrollbar] = useState(false);
-
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end 80vh'],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((value) => {
-      if (value >= 1 && !hasScaled) {
-        setHasScaled(true);
-      }
-    });
-
-    return () => unsubscribe();
-  }, [scrollYProgress, hasScaled]);
-
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((value) => {
-      if (value >= 0.25 && !showLevel1) {
-        setShowLevel1(true);
-      }
-      if (value >= 0.5 && !showLevel2) {
-        setShowLevel2(true);
-      }
-      if (value >= 0.6 && !showLevel3) {
-        setShowLevel3(true);
-      }
-      if (value >= 0.8 && !showLevel4) {
-        setShowScrollbar(true);
-        setShowLevel4(true);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  console.log('showScrollbar', showScrollbar);
-
-  return (
-    <motion.div
-      ref={ref}
-      style={{ scale: hasScaled ? 1 : scale }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 5 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{
-        // margin: '-200px',
-        once: true,
-      }}
-      onWheel={(e) => {
-        e.preventDefault();
-        console.log(e, 'wheeling');
-      }}
-      className='w-full h-[80dvh] overflow-auto no-scrollbar'
-    >
-      <div className='sticky top-0 w-full'>
-        <div className=' relative h-max w-max'>
-          <img alt='img-2' src={Img2.src} className='w-max overflow-hidden' />
-          <div className='absolute top-[70%] left-[55%] -translate-y-1/2 -translate-x-1/2'>
-            <RoadIcon
-              color={{
-                level1: showLevel1 ? '#047399' : '',
-                level2: showLevel2 ? '#00BD9C' : '',
-                level3: showLevel3 ? '#FFC500' : '',
-                level4: showLevel4 ? '#FF4B38' : '',
-              }}
-            />
-            {showLevel1 && (
-              <motion.div>
-                <ContentModal
-                  content='Choose a Course'
-                  className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%]'
-                />
-                <LandmarkNumberOne
-                  className={`absolute lg:-top-30 lg:left-20
-                  -top-[70%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
-                  -translate-y-1/4 animate-float-ease lg:w-max w-[60px]
-                  md:left-[8%] md:w-[90px] md:-top-[28%]
-                  `}
-                />
-              </motion.div>
-            )}
-            {showLevel2 && (
-              <motion.div>
-                <ContentModal
-                  content='Learn with AI mentor'
-                  className='lg:top-20 lg:-right-56 top-20 -right-40 animate-float-ease'
-                />
-                <LandmarkNumberTwo
-                  color={showLevel2 ? '#00BD9C' : ''}
-                  className={`absolute lg:-top-14 lg:right-0 -translate-x-1/4 -translate-y-1/4
-                  -top-[50%] -right-[0%] w-[70px] lg:w-max sm:-top-[28%] sm:right-[0%] sm:w-[80px]
-                  md:-top-[18%] md:right-[0%] md:w-[90px]
-                  animate-float-ease`}
-                />
-              </motion.div>
-            )}
-            {showLevel3 && (
-              <motion.div>
-                <ContentModal
-                  content='Complete Exercises'
-                  className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-60 md:-left-36 '
-                />
-                <LandmarkNumberThree
-                  color={showLevel3 ? '#FFC500' : ''}
-                  className={`absolute lg:bottom-64 lg:-left-10 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  bottom-[16%] left-[1%] w-[70px] sm:w-[80px] sm:bottom-[30%] sm:left-[15%]
-                  md:bottom-[40%] md:left-[10%] md:w-[90px]`}
-                />
-              </motion.div>
-            )}
-            {showLevel4 && (
-              <motion.div>
-                <ContentModal
-                  content='Earn Blockchain Certificates'
-                  className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[30%] animate-float-ease'
-                />
-                <LandmarkNumberFour
-                  color={showLevel4 ? '#FF4B38' : ''}
-                  className={`absolute lg:bottom-20 lg:right-10 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  -bottom-[20%] right-[20%] w-[70px] sm:w-[80px] sm:-bottom-[10%] sm:right-[20%]
-                  md:bottom-[1%] md:right-[20%] md:w-[90px]
-                `}
-                />
-              </motion.div>
-            )}
-          </div>
-        </div>
-      </div>
-      {showScrollbar && <div className='h-[300dvh] w-full bg-red-200'></div>}
-    </motion.div>
-  );
+export {
+  LandmarkNumberOne,
+  LandmarkNumberTwo,
+  LandmarkNumberThree,
+  LandmarkNumberFour,
 };
