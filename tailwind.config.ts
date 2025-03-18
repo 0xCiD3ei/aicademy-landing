@@ -6,23 +6,41 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        primary: ['Poppins', ...defaultTheme.fontFamily.sans],
+        'dela-gothic-one': ['Dela Gothic One', ...defaultTheme.fontFamily.sans],
+        'comic-sans-ms': ['Comic Sans MS', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
-          // Customize it on globals.css :root
-          50: 'rgb(var(--tw-color-primary-50) / <alpha-value>)',
-          100: 'rgb(var(--tw-color-primary-100) / <alpha-value>)',
-          200: 'rgb(var(--tw-color-primary-200) / <alpha-value>)',
-          300: 'rgb(var(--tw-color-primary-300) / <alpha-value>)',
-          400: 'rgb(var(--tw-color-primary-400) / <alpha-value>)',
-          500: 'rgb(var(--tw-color-primary-500) / <alpha-value>)',
-          600: 'rgb(var(--tw-color-primary-600) / <alpha-value>)',
-          700: 'rgb(var(--tw-color-primary-700) / <alpha-value>)',
-          800: 'rgb(var(--tw-color-primary-800) / <alpha-value>)',
-          900: 'rgb(var(--tw-color-primary-900) / <alpha-value>)',
-          950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
+          DEFAULT: 'rgb(var(--tw-color-primary))',
+          foreground: 'rgb(var(--tw-color-primary-foreground))',
         },
+        secondary: {
+          DEFAULT: 'rgb(var(--tw-color-secondary))',
+          foreground: 'rgb(var(--tw-color-secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'rgb(var(--tw-color-destructive))',
+          foreground: 'rgb(var(--tw-color-destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'rgb(var(--tw-color-muted))',
+          foreground: 'rgb(var(--tw-color-muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'rgb(var(--tw-color-accent))',
+          foreground: 'rgb(var(--tw-color-accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'rgb(var(--tw-color-popover))',
+          foreground: 'rgb(var(--tw-color-popover-foreground))',
+        },
+        faded: {
+          DEFAULT: 'rgb(var(--color-faded))',
+          foreground: 'rgb(var(--color-faded-foreground))',
+        },
+        border: 'rgb(var(--tw-color-border))',
+        'btn-hover': 'rgb(var(--tw-color-button-hover))',
         dark: '#222222',
       },
       keyframes: {
@@ -45,12 +63,51 @@ export default {
             backgroundPosition: '700px 0',
           },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(50px)' },
+        },
+        'float-ease': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(20px)' },
+        },
+        'spin-bounce': {
+          '0%, 100%': { transform: 'rotate(-10deg)' },
+          '50%': { transform: 'rotate(10deg)' },
+        },
+        'spin-debounce': {
+          '0%, 100%': { transform: 'rotate(10deg)' },
+          '50%': { transform: 'rotate(-10deg)' },
+        },
+        "slide-x": {
+          "0%": { transform: "translateX(0px)" },
+          "100%": { transform: "translateX(calc(40px))" },
+        },
+        "slide-x-bg": {
+          from: { width: "0%" },
+          to: { width: "max-content" },
+        },
+        dotPulse: {
+          "0%, 100%": { opacity: "0.3" },
+          "25%": { opacity: "0.5" },
+          "50%": { opacity: "1" },
+          "75%": { opacity: "0.5" },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        float: 'float 3s ease-in-out infinite',
+        'float-ease': 'float-ease 3s ease-in-out infinite',
+        'spin-bounce': 'spin-bounce 1s ease-in-out infinite',
+        'spin-debounce': 'spin-debounce 1s ease-in-out infinite',
+        "slide-x": "slide-x 2s linear infinite alternate",
+        "slide-x-bg": "slide-x-bg 3s ease-out forwards",
+        dot1: "dotPulse 1.5s infinite ease-in-out",
+        dot2: "dotPulse 1.5s infinite ease-in-out 0.2s",
+        dot3: "dotPulse 1.5s infinite ease-in-out 0.4s",
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('tailwindcss-animate')],
 } satisfies Config;
