@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85901952-6d46-4494-8760-859ebdc4e352" name="Changes" comment="">
+    <list default="true" id="85901952-6d46-4494-8760-859ebdc4e352" name="Changes" comment="chore: remove unused file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/homepage/RoadIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/roadmap/RoadIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/interactive-challenge/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/interactive-challenge/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage/roadmap/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/roadmap/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +40,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="ui/test" />
-                    <option name="lastUsedInstant" value="1742208861" />
+                    <option name="branchName" value="ui/road-map" />
+                    <option name="lastUsedInstant" value="1742291303" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="ui/roadmap" />
-                    <option name="lastUsedInstant" value="1742207658" />
+                    <option name="branchName" value="ui/test" />
+                    <option name="lastUsedInstant" value="1742208861" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="ui/homepage" />
@@ -71,6 +70,9 @@
     &quot;accountId&quot;: &quot;71160c79-0c69-471e-9002-8e385dc09c4d&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/app/error.tsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -95,24 +97,26 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "ui/test",
-    "last_opened_file_path": "/home/phuoc/Icetea/wucoin",
+    "git-widget-placeholder": "ui/road-map",
+    "last_opened_file_path": "/home/phuoc/Icetea/aicedemy-landing",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
+    "nodejs_interpreter_path": "/home/phuoc/.nvm/versions/node/v20.18.1/bin/node",
     "nodejs_package_manager_path": "/home/phuoc/Icetea/aicedemy-landing",
     "prettierjs.PrettierConfiguration.Package": "/home/phuoc/Icetea/aicedemy-landing/node_modules/prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "/home/phuoc/Icetea/aicedemy-landing/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/homepage/roadmap" />
+      <recent name="$PROJECT_DIR$/src/components/homepage" />
       <recent name="$PROJECT_DIR$/src/app/test" />
     </key>
   </component>
@@ -154,8 +158,35 @@
       <workItem from="1741921201807" duration="1403000" />
       <workItem from="1742178918613" duration="42000" />
       <workItem from="1742202774509" duration="353000" />
-      <workItem from="1742208654473" duration="337000" />
+      <workItem from="1742208654473" duration="914000" />
+      <workItem from="1742266681202" duration="333000" />
+      <workItem from="1742267162817" duration="92000" />
+      <workItem from="1742267262516" duration="232000" />
+      <workItem from="1742267884877" duration="109000" />
+      <workItem from="1742268001432" duration="87000" />
+      <workItem from="1742268646650" duration="831000" />
+      <workItem from="1742269485111" duration="292000" />
+      <workItem from="1742269913325" duration="78000" />
+      <workItem from="1742270277465" duration="4451000" />
+      <workItem from="1742285571205" duration="4849000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: update lib">
+      <option name="closed" value="true" />
+      <created>1742209077714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742209077714</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: remove unused file">
+      <option name="closed" value="true" />
+      <created>1742209563178</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742209563178</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,5 +202,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: update lib" />
+    <MESSAGE value="chore: remove unused file" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: remove unused file" />
   </component>
 </project>

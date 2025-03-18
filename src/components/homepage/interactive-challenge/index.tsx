@@ -15,7 +15,7 @@ const images = [Interactive1, Interactive2, Interactive1, Interactive2];
 
 export default function InteractiveChallenge() {
   return (
-    <div className='bg-faded py-20 md:px-[72px] px-5 overflow-visible'>
+    <div className='bg-faded pb-24 pt-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
       <div className='flex justify-center w-full overflow-visible'>
         <div className='max-w-[1320px] w-full flex-1'>
           <div className='flex items-center justify-center lg:gap-[67px] md:gap-5 gap-5'>
@@ -58,7 +58,7 @@ export default function InteractiveChallenge() {
           </div>
         </div>
       </div>
-      <div className='w-full h-max mt-6 md:hidden block overflow-visible'>
+      <div className='w-full h-max mt-6 md:hidden block'>
         <ImageCarouselMobile />
       </div>
     </div>

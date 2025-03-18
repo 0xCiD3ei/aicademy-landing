@@ -2,11 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { useWindowSize } from 'usehooks-ts';
-
-import NextImage from '@/components/NextImage';
+import { useResizeObserver } from 'usehooks-ts';
 
 import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
+import NextImage from '@/components/NextImage';
+
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
 
@@ -20,20 +20,20 @@ import { ContentModal } from '../interactive-challenge/ContentModal';
 
 export default function Section3() {
   return (
-    <div className='mb-20'>
-      <div className='flex items-center justify-center my-[158px]'>
+    <>
+      <div className='flex items-center lg:flex-row flex-col justify-center'>
         <NextImage alt='img-1' src={Img1} width={622} height={433} />
-        <div className='flex flex-col text-primary-foreground'>
-          <h3 className='font-dela-gothic-one text-5xl tracking-[1%] capitalize w-[313px]'>
+        <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3'>
+          <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
             Ultimate motivation
           </h3>
-          <p className='mt-10 w-[520px] text-2xl tracking-[1%]'>
+          <p className='w-[520px] lg:text-2xl text-xl tracking-[1%]'>
             Give badges, unlock achievements, and earn blockchain-verified NFT
             Certificates
           </p>
         </div>
       </div>
-      <div className='relative w-full'>
+      <div className='relative w-full my-8'>
         <div className='flex justify-center'>
           <div className='bg-secondary w-full max-w-[1320px] rounded-[40px] md:py-[64px] py-[30px] font-dela-gothic-one flex flex-col gap-5'>
             <h3 className='text-primary-foreground text-center text-2xl font-bold tracking-[2%] sm:px-[89px]'>
@@ -46,7 +46,7 @@ export default function Section3() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -57,19 +57,21 @@ const CenterImage = () => {
   const [showLevel3, setShowLevel3] = useState(false);
   const [showLevel4, setShowLevel4] = useState(false);
   const [showScrollbar, setShowScrollbar] = useState(true);
-  const [height, setHeight] = useState(0);
 
   const ref = useRef<HTMLDivElement>(null);
   const roadRef = useRef<HTMLImageElement>(null);
+  const { width = 0, height = 0 } = useResizeObserver({
+    ref: roadRef,
+    box: 'border-box',
+  })
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end 80vh'],
   });
-  const { width = 0 } = useWindowSize();
 
   useEffect(() => {
-    setHeight(roadRef?.current?.clientHeight || 300);
-  }, [width]);
+    // setHeight(roadRef?.current?.clientHeight || (width < 450 ? 400 :750));
+  }, [width, roadRef?.current]);
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   useEffect(() => {
@@ -102,7 +104,7 @@ const CenterImage = () => {
       ref={ref}
       style={{
         scale: hasScaled ? 1 : scale,
-        height: `${height + (width < 400 ? 100 : 50)}px`,
+        height: `${height + (width < 400 ? 100 : 80)}px`,
         paddingBlock: `${width < 400 ? 50 : 10}px`,
       }}
       initial={{ opacity: 0 }}
@@ -117,8 +119,8 @@ const CenterImage = () => {
       className='w-full overflow-auto no-scrollbar md:pt-0'
     >
       <div className='sticky top-0 w-full flex justify-center'>
-        <div className=' relative h-max w-max' ref={roadRef}>
-          <img alt='img-2' src={Img2.src} className='w-max h-max' />
+        <div className=' relative h-max' >
+          <img alt='img-2' src={Img2.src} className='w-max h-max' ref={roadRef} />
           <div className='absolute top-[70%] left-[55%] -translate-y-1/2 -translate-x-1/2'>
             <RoadIcon
               color={{
