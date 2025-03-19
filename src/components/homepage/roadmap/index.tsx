@@ -22,16 +22,18 @@ import { ContentModal } from '../interactive-challenge/ContentModal';
 export default function Section3() {
   return (
     <>
-      <div className='flex items-center lg:flex-row flex-col justify-center gap-2 md:my-20 my-10'>
-        <img alt='img-1' src={Img1.src} width={722} height={433} className="object-cover h-auto" />
-        <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3'>
-          <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
-            Ultimate motivation
-          </h3>
-          <p className='w-full lg:text-2xl text-lg tracking-[1%]'>
-            Give badges, unlock achievements, and earn blockchain-verified NFT
-            Certificates
-          </p>
+      <div className="flex justify-center">
+        <div className='flex lg:flex-row flex-col justify-center items-center gap-2 md:my-20 my-10 md:max-w-[1320px]'>
+          <img alt='img-1' src={Img1.src} width={722} height={433} className="object-cover h-auto flex-1" />
+          <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3 lg:w-[50%] flex-1'>
+            <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
+              Ultimate motivation
+            </h3>
+            <p className='max-w-max lg:text-2xl text-lg tracking-[1%] inline'>
+              Give badges, unlock achievements, and earn blockchain-verified NFT
+              Certificates
+            </p>
+          </div>
         </div>
       </div>
       <div className='relative w-full my-8'>
