@@ -93,6 +93,16 @@ export default {
           '50%': { opacity: '1' },
           '75%': { opacity: '0.5' },
         },
+        'zoom-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'scale(0.5) translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1) translateY(0)',
+          },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
@@ -106,6 +116,7 @@ export default {
         dot1: 'dotPulse 1.5s infinite ease-in-out',
         dot2: 'dotPulse 1.5s infinite ease-in-out 0.2s',
         dot3: 'dotPulse 1.5s infinite ease-in-out 0.4s',
+        'zoom-in-up': 'zoom-in-up 0.5s ease-out',
       },
     },
   },
