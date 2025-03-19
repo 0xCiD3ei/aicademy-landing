@@ -28,7 +28,7 @@ export default function Section3() {
           <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
             Ultimate motivation
           </h3>
-          <p className='md:w-[520px] w-full lg:text-2xl text-lg tracking-[1%]'>
+          <p className='w-full lg:text-2xl text-lg tracking-[1%]'>
             Give badges, unlock achievements, and earn blockchain-verified NFT
             Certificates
           </p>
@@ -72,7 +72,8 @@ const CenterImage = () => {
   });
 
   const checkIfCenter = () => {
-    if (roadRef.current) {
+    if (!roadRef.current || showLevel4) return;
+
       const rect = roadRef.current.getBoundingClientRect();
       const viewportCenterY = window.innerHeight / 2;
       const elementCenterY = rect.top + rect.height / 2;
@@ -80,10 +81,9 @@ const CenterImage = () => {
       // Check if the element's center is within a small range of the viewport center
       const isYCenter = Math.abs(elementCenterY - viewportCenterY) < 10; // 10px tolerance
 
-      if(isYCenter && !showLevel4) {
+      if(isYCenter) {
         setShowScrollbar(true);
       }
-    }
   };
 
   useEffect(() => {
@@ -122,9 +122,8 @@ const CenterImage = () => {
     if (progress >= 0.5 && !showLevel2) setShowLevel2(true);
     if (progress >= 0.7 && !showLevel3) setShowLevel3(true);
     if (progress >= 0.9) {
-      setShowLevel4(true);
-    }if(progress >= 1) {
       setShowScrollbar(false);
+      setTimeout(() => setShowLevel4(true),100)
     }
   };
 
