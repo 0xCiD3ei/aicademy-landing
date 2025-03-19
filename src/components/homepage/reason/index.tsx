@@ -11,8 +11,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import Rabbit from '@/assets/homepage/rabbit-1.png';
 import Thumbnail from '@/assets/homepage/thumbnail-1.png';
+import { cn } from '@/lib/utils';
 
-export default function Section1() {
+export default function Reason() {
   const bgRef = useRef(null);
   const textRef = useRef(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
@@ -73,9 +74,14 @@ export default function Section1() {
 
   return (
     <>
-      <div className='relative bg-secondary xl:pt-[286px] xl:pb-[300px] overflow-hidden [clip-path:polygon(0%_0%,100%_0%, 100%_100%)]'>
+      <div className='relative xl:pt-[286px] xl:pb-[300px] overflow-hidden'
+
+      >
+        <div className="absolute mt-12 inset-0 bg-center bg-secondary w-full h-full" style={{
+          clipPath: "polygon(100% 2.55%, 100% 95%, 0% 100%, 0% 0%)"
+        }} />
         <div className='absolute top-0 left-0 bg-[url(/images/section-bg.png)] bg-center w-full h-full' />
-        <div className='absolute top-10 -left-10 flex items-center overflow-hidden rotate-[2.55deg]'>
+        <div className='absolute top-10 -left-10 flex items-center overflow-hidden rotate-[1.5deg]'>
           <motion.div
             ref={topRowRef}
             style={{ x: xTop }}
@@ -84,7 +90,7 @@ export default function Section1() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className='py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]'
+                className={cn('py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]', ele === 1 && "pl-[5px] md:pl-2.5 xl:pl-5")}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img
@@ -106,7 +112,7 @@ export default function Section1() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className='py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]'
+                className={cn('py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]', ele === 1 && "pl-[5px] md:pl-2.5 xl:pl-5")}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img
@@ -122,7 +128,7 @@ export default function Section1() {
 
         <div
           ref={textSectionRef}
-          className='h-[800px] md:h-[1000px] lg:h-[1129px] flex items-center justify-center flex-col'
+          className='relative h-[800px] md:h-[1000px] lg:h-[1129px] flex items-center justify-center flex-col'
         >
           <h2 className='text-center text-primary-foreground font-semibold text-sm md:text-2xl xl:text-5xl'>
             What is{' '}
