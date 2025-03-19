@@ -1,2 +1,7 @@
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+build:
+    publish: /opt/build/repo
+    publishOrigin: ui
+plugins:
+  - inputs: {}
+    origin: config
+    package: '@netlify/plugin-nextjs'
