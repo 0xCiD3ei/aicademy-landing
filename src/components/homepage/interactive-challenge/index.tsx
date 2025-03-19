@@ -89,9 +89,9 @@ const ImageCarouselMobile = () => {
     },
   };
   return (
-    <div className="relative">
+    <div className='relative'>
       <Carousel
-        containerClass="container"
+        containerClass='container'
         responsive={responsive}
         partialVisbile
         customButtonGroup={<ButtonGroup />}

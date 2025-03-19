@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useSliceImage = (images: string[]) => {
-    
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    
-    
-    return 
-}
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  return;
+};

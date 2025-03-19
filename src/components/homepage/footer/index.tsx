@@ -13,7 +13,8 @@ export default function Footer() {
           <p className='text-primary'>AI Learning Journey !</p>
         </h1>
         <p className='text-center text-primary-foreground text-sm md:text-xl lg:text-2xl'>
-          Give badges, unlock achievements, and earn blockchain-verified NFT Certificates.
+          Give badges, unlock achievements, and earn blockchain-verified NFT
+          Certificates.
         </p>
         <div className='cursor-pointer bg-primary h-14 rounded-xl lg:rounded-full px-2 py-4 max-w-max flex items-center gap-2 drop-shadow-[3px_3px_0px_rgba(11,117,124,1)]'>
           <div className='w-10 h-10 rounded-full bg-white flex items-center justify-center'>
@@ -54,20 +55,20 @@ export default function Footer() {
       <FooterBg />
       <div className='border-y-4 border-border'>
         <div className='flex items-center justify-center w-full flex-col lg:flex-row'>
-          <div className="flex items-center justify-center w-full">
+          <div className='flex items-center justify-center w-full'>
             <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-b-4 lg:border-b-0 border-r-4 border-border flex-1'>
-              <FacebookIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+              <FacebookIcon className='w-7 h-7 lg:w-10 lg:h-10' />
             </div>
             <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-b-4 lg:border-b-0 lg:border-r-4 border-border flex-1'>
-              <TwitterIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+              <TwitterIcon className='w-7 h-7 lg:w-10 lg:h-10' />
             </div>
           </div>
-          <div className="flex items-center justify-center w-full">
+          <div className='flex items-center justify-center w-full'>
             <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] border-r-4 border-border flex-1'>
-              <TelegramIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+              <TelegramIcon className='w-7 h-7 lg:w-10 lg:h-10' />
             </div>
             <div className='flex items-center justify-center bg-[#007880] h-[52px] lg:h-[100px] flex-1'>
-              <YoutubeIcon className="w-7 h-7 lg:w-10 lg:h-10" />
+              <YoutubeIcon className='w-7 h-7 lg:w-10 lg:h-10' />
             </div>
           </div>
         </div>

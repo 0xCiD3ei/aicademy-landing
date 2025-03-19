@@ -62,7 +62,7 @@ const CenterImage = () => {
   const { width = 0, height = 0 } = useResizeObserver({
     ref: roadRef,
     box: 'border-box',
-  })
+  });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end 80vh'],
@@ -118,8 +118,13 @@ const CenterImage = () => {
       className='w-full overflow-auto no-scrollbar md:pt-0'
     >
       <div className='sticky top-0 w-full flex justify-center'>
-        <div className=' relative h-max' >
-          <img alt='img-2' src={Img2.src} className='w-full h-auto object-cover' ref={roadRef} />
+        <div className=' relative h-max'>
+          <img
+            alt='img-2'
+            src={Img2.src}
+            className='w-full h-auto object-cover'
+            ref={roadRef}
+          />
           <div className='absolute top-[70%] left-[55%] -translate-y-1/2 -translate-x-1/2'>
             <RoadIcon
               color={{

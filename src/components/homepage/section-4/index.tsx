@@ -1,5 +1,3 @@
-import NextImage from '@/components/NextImage';
-
 import Img2 from '@/assets/homepage/section4-2.png';
 import Img3 from '@/assets/homepage/section4-3.png';
 import Img4 from '@/assets/homepage/section4-4.png';
@@ -46,7 +44,7 @@ export default function Section4() {
                   src={Img7.src}
                   width={263}
                   height={236}
-                  className="rounded-[20px]"
+                  className='rounded-[20px]'
                 />
               </div>
             </div>
