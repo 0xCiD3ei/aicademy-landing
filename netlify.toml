@@ -1,6 +1,3 @@
-build:
-    publish: /opt/build/repo
-    publishOrigin: ui
 plugins:
   - inputs: {}
     origin: config
