@@ -15,7 +15,7 @@ const images = [Interactive1, Interactive2, Interactive1, Interactive2];
 
 export default function InteractiveChallenge() {
   return (
-    <div className='bg-faded pb-24 pt-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
+    <div className='bg-faded py-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
       <div className='flex justify-center w-full overflow-visible'>
         <div className='max-w-[1320px] w-full flex-1'>
           <div className='flex items-center justify-center lg:gap-[67px] md:gap-5 gap-5'>
@@ -58,7 +58,7 @@ export default function InteractiveChallenge() {
           </div>
         </div>
       </div>
-      <div className='w-full h-max mt-6 md:hidden block'>
+      <div className='mt-6 md:hidden block'>
         <ImageCarouselMobile />
       </div>
     </div>
@@ -89,9 +89,9 @@ const ImageCarouselMobile = () => {
     },
   };
   return (
-    <div className='overflow-visible'>
+    <div className='relative'>
       <Carousel
-        className='!overflow-visible'
+        containerClass='container'
         responsive={responsive}
         partialVisbile
         customButtonGroup={<ButtonGroup />}
@@ -103,7 +103,7 @@ const ImageCarouselMobile = () => {
               key={index}
               alt='img-1'
               src={img.src}
-              className='object-cover pr-3'
+              className='object-cover pr-3 pb-14'
             />
           );
         })}
@@ -117,7 +117,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className='carousel-button-group absolute -bottom-14 left-0 w-full flex items-center z-50 gap-2'>
+    <div className='carousel-button-group  absolute bottom-1 left-0 w-full flex items-center z-50 gap-2'>
       <Button
         className={currentSlide === 0 ? 'disable' : ''}
         onClick={() => previous()}

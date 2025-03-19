@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useResizeObserver } from 'usehooks-ts';
 
 import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
-import NextImage from '@/components/NextImage';
 
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
@@ -21,13 +20,13 @@ import { ContentModal } from '../interactive-challenge/ContentModal';
 export default function Section3() {
   return (
     <>
-      <div className='flex items-center lg:flex-row flex-col justify-center'>
-        <NextImage alt='img-1' src={Img1} width={622} height={433} />
+      <div className='flex items-center lg:flex-row flex-col justify-center gap-2'>
+        <img alt='img-1' src={Img1.src} width={622} height={433} />
         <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3'>
           <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
             Ultimate motivation
           </h3>
-          <p className='w-[520px] lg:text-2xl text-xl tracking-[1%]'>
+          <p className='md:w-[520px] w-full lg:text-2xl text-lg tracking-[1%]'>
             Give badges, unlock achievements, and earn blockchain-verified NFT
             Certificates
           </p>
@@ -35,7 +34,7 @@ export default function Section3() {
       </div>
       <div className='relative w-full my-8'>
         <div className='flex justify-center'>
-          <div className='bg-secondary w-full max-w-[1320px] rounded-[40px] md:py-[64px] py-[30px] font-dela-gothic-one flex flex-col gap-5'>
+          <div className='bg-secondary w-full md:max-w-[1320px] max-w-max rounded-[40px] md:py-[64px] py-[30px] font-dela-gothic-one flex flex-col gap-5'>
             <h3 className='text-primary-foreground text-center text-2xl font-bold tracking-[2%] sm:px-[89px]'>
               What do you do in{' '}
               <span className='sm:text-[80px] text-5xl leading-[120%] block sm:inline'>
@@ -63,7 +62,7 @@ const CenterImage = () => {
   const { width = 0, height = 0 } = useResizeObserver({
     ref: roadRef,
     box: 'border-box',
-  })
+  });
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end 80vh'],
@@ -119,8 +118,13 @@ const CenterImage = () => {
       className='w-full overflow-auto no-scrollbar md:pt-0'
     >
       <div className='sticky top-0 w-full flex justify-center'>
-        <div className=' relative h-max' >
-          <img alt='img-2' src={Img2.src} className='w-max h-max' ref={roadRef} />
+        <div className=' relative h-max'>
+          <img
+            alt='img-2'
+            src={Img2.src}
+            className='w-full h-auto object-cover'
+            ref={roadRef}
+          />
           <div className='absolute top-[70%] left-[55%] -translate-y-1/2 -translate-x-1/2'>
             <RoadIcon
               color={{
