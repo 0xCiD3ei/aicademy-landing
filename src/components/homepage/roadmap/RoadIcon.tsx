@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const transition = { duration: 20, yoyo: Infinity, ease: 'easeInOut' };

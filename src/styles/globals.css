@@ -29,8 +29,7 @@
   --color-primary-800: rgb(var(--tw-color-primary-800)); /* #075985 */
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   /* #endregion  /**======== Primary Color =========== */
-  --color-faded: 243 243 243  /* #F3F3F3 */
-
+  --color-faded: 243 243 243; /* #F3F3F3 */
 }
 
 @layer base {
@@ -124,8 +123,6 @@
   }
 }
 
-
-
 [data-scroll-container] {
   height: 100vh;
   overflow-y: auto;
@@ -155,6 +152,6 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

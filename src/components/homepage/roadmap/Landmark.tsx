@@ -1,6 +1,6 @@
 'use client';
 
-import { useAnimation, motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 
 function LandmarkNumberOne({ className }: { className?: string }) {
@@ -212,8 +212,8 @@ function LandmarkNumberFour({
 }
 
 export {
-  LandmarkNumberOne,
-  LandmarkNumberTwo,
-  LandmarkNumberThree,
   LandmarkNumberFour,
+  LandmarkNumberOne,
+  LandmarkNumberThree,
+  LandmarkNumberTwo,
 };
