@@ -152,7 +152,7 @@ export default function Banner() {
           </div>
         </div>
       </div>
-      <div className='hidden absolute -bottom-[25%] right-0'>
+      <div className='hidden xl:block absolute bottom-[0%] right-0'>
         <NextImage src={TouchHand} alt='touch-hand' width={1006} height={968}/>
       </div>
     </div>
