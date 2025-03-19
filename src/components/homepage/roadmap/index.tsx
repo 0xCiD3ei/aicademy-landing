@@ -59,7 +59,7 @@ const CenterImage = () => {
   const [showLevel2, setShowLevel2] = useState(false);
   const [showLevel3, setShowLevel3] = useState(false);
   const [showLevel4, setShowLevel4] = useState(false);
-  const [showScrollbar, setShowScrollbar] = useState(false);
+  const [showScrollbar, setShowScrollbar] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const roadRef = useRef<HTMLImageElement>(null);
   const inView = useInView(roadRef, { margin: '100px' })
@@ -146,7 +146,7 @@ const CenterImage = () => {
         once: true,
       }}
       onScroll={handleScroll}
-      className='w-full overflow-auto no-scrollbar md:pt-0'
+      className={cn('w-full overflow-auto no-scrollbar md:pt-0', showLevel4 && 'overflow-y-hidden')}
     >
       <div className='sticky top-0 w-full flex justify-center'>
         <div className=' relative h-max'>
@@ -176,7 +176,7 @@ const CenterImage = () => {
                   className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%]'
                 />
                 <LandmarkNumberOne
-                  color={showLevel1 ? "#0081BC" : ""}
+                  color={showLevel1 ? '#0081BC' : ''}
                   className={`absolute lg:-top-30 lg:left-20
                   -top-[70%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
                   -translate-y-1/4 animate-float-ease lg:w-max w-[60px]

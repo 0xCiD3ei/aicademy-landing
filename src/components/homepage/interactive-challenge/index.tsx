@@ -1,19 +1,23 @@
 'use client';
 
 import Image from 'next/image';
-import { HTMLProps, PropsWithChildren } from 'react';
+import { HTMLProps, PropsWithChildren, useState } from 'react';
 import Carousel from 'react-multi-carousel';
-
+import {motion} from "framer-motion"
 import 'react-multi-carousel/lib/styles.css';
 
 import { cn } from '@/lib/utils';
 
 import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [Interactive1, Interactive2, Interactive1, Interactive2];
 
 export default function InteractiveChallenge() {
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
     <div className='bg-faded py-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
       <div className='flex justify-center w-full overflow-visible'>
@@ -30,27 +34,32 @@ export default function InteractiveChallenge() {
             </div>
             <div className='lg:flex items-end hidden'>
               <div className='flex flex-col mb-[120px] gap-2'>
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-black rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
+                {images.map((_, index) => (
+                  <div
+                    className={cn('md:w-5 md:h-5 w-3 h-3 rounded-full cursor-pointer', selectedIndex === index ? 'bg-primary-foreground' : 'bg-primary-foreground opacity-20')}
+                    key={index}
+                    onClick={() => setSelectedIndex(index)}
+                  />
+                ))}
               </div>
               <div className='relative ml-16 w-max h-max'>
                 <Image
                   alt='img-1'
-                  src={Interactive1}
+                  src={images[selectedIndex]}
                   width={529}
                   height={698}
                   className='relative z-[1] max-w-[30dvw]'
                 />
                 <div className='absolute -top-10 -left-10'>
-                  <Image
-                    alt='img-1'
-                    src={Interactive2}
-                    width={529}
-                    height={698}
-                    className='max-w-[30dvw]'
-                  />
+                  <motion.div>
+                    <Image
+                      alt='img-1'
+                      src={images[selectedIndex - 1 < 0 ? images.length - 1 : selectedIndex - 1]}
+                      width={529}
+                      height={698}
+                      className='max-w-[30dvw]'
+                    />
+                  </motion.div>
                 </div>
                 {/* <div className='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-[698px]' /> */}
               </div>
@@ -122,10 +131,10 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
         className={currentSlide === 0 ? 'disable' : ''}
         onClick={() => previous()}
       >
-        Prev
+        <ChevronLeft />
       </Button>
       <div className='w-full h-[1px] bg-slate-300' />
-      <Button onClick={() => next()}>Next</Button>
+      <Button onClick={() => next()}><ChevronRight /></Button>
     </div>
   );
 };
