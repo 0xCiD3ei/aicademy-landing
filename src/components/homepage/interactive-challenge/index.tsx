@@ -28,7 +28,7 @@ export default function InteractiveChallenge() {
                 challenges.
               </p>
             </div>
-            <div className='md:flex items-end hidden'>
+            <div className='lg:flex items-end hidden'>
               <div className='flex flex-col mb-[120px] gap-2'>
                 <div className='md:w-5 md:h-5 w-3 h-3 bg-black rounded-full' />
                 <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
@@ -58,7 +58,7 @@ export default function InteractiveChallenge() {
           </div>
         </div>
       </div>
-      <div className='mt-6 md:hidden block'>
+      <div className='mt-6 lg:hidden block'>
         <ImageCarouselMobile />
       </div>
     </div>

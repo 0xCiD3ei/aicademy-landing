@@ -3,7 +3,8 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 
-function LandmarkNumberOne({ className }: { className?: string }) {
+function LandmarkNumberOne({ className, color }: { className?: string, color: string }) {
+  // #0081BC
   return (
     <svg
       className={className}
@@ -27,7 +28,7 @@ function LandmarkNumberOne({ className }: { className?: string }) {
       />
       <path
         d='M54.9461 14.446C81.5493 29.8054 103.041 67.0443 102.956 97.6255C102.89 121.057 90.1492 133.778 72.2175 131.522L54.5362 159.269L34.6237 108.605C18.0291 90.2773 6.53775 64.34 6.60103 41.9928C6.68906 11.4143 28.332 -0.918913 54.9461 14.446Z'
-        fill='#0081BC'
+        fill={color || '#8F8F8F'}
       />
       <path
         d='M26.813 24.8114L29.2065 23.4194C36.0732 19.4275 45.5838 19.9915 56.082 26.0495L53.6886 27.4415C43.1931 21.3808 33.6825 20.8196 26.813 24.8114Z'
@@ -43,7 +44,7 @@ function LandmarkNumberOne({ className }: { className?: string }) {
       />
       <path
         d='M57.2405 40.0427L57.0452 108.762L48.0326 103.557L48.1812 50.6784L40.5056 46.2464L40.5248 39.0193C42.6872 39.9711 44.7368 40.2078 46.7093 39.7676C48.6653 39.2999 50.0739 38.1829 50.935 36.3975L57.2405 40.0427Z'
-        fill='#0081BC'
+        fill={color || '#8F8F8F'}
       />
     </svg>
   );

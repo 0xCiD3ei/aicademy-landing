@@ -1,8 +1,10 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useResizeObserver } from 'usehooks-ts';
+
+import { cn } from '@/lib/utils';
 
 import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
 
@@ -20,13 +22,13 @@ import { ContentModal } from '../interactive-challenge/ContentModal';
 export default function Section3() {
   return (
     <>
-      <div className='flex items-center lg:flex-row flex-col justify-center gap-2'>
-        <img alt='img-1' src={Img1.src} width={622} height={433} />
+      <div className='flex items-center lg:flex-row flex-col justify-center gap-2 md:my-20 my-10'>
+        <img alt='img-1' src={Img1.src} width={722} height={433} className="object-cover h-auto" />
         <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3'>
           <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
             Ultimate motivation
           </h3>
-          <p className='md:w-[520px] w-full lg:text-2xl text-lg tracking-[1%]'>
+          <p className='w-full lg:text-2xl text-lg tracking-[1%]'>
             Give badges, unlock achievements, and earn blockchain-verified NFT
             Certificates
           </p>
@@ -55,10 +57,11 @@ const CenterImage = () => {
   const [showLevel2, setShowLevel2] = useState(false);
   const [showLevel3, setShowLevel3] = useState(false);
   const [showLevel4, setShowLevel4] = useState(false);
-  const [showScrollbar, setShowScrollbar] = useState(true);
-
+  const [showScrollbar, setShowScrollbar] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const roadRef = useRef<HTMLImageElement>(null);
+  const inView = useInView(roadRef, { margin: '100px' })
+
   const { width = 0, height = 0 } = useResizeObserver({
     ref: roadRef,
     box: 'border-box',
@@ -68,11 +71,34 @@ const CenterImage = () => {
     offset: ['start end', 'end 80vh'],
   });
 
-  useEffect(() => {
-    // setHeight(roadRef?.current?.clientHeight || (width < 450 ? 400 :750));
-  }, [width, roadRef?.current]);
+  const checkIfCenter = () => {
+    if (!roadRef.current || showLevel4) return;
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+      const rect = roadRef.current.getBoundingClientRect();
+      const viewportCenterY = window.innerHeight / 2;
+      const elementCenterY = rect.top + rect.height / 2;
+
+      // Check if the element's center is within a small range of the viewport center
+      const isYCenter = Math.abs(elementCenterY - viewportCenterY) < 10; // 10px tolerance
+
+      if(isYCenter) {
+        setShowScrollbar(true);
+      }
+  };
+
+  useEffect(() => {
+    if(showLevel4) return
+    // Check on mount and on window resize
+    checkIfCenter();
+    window.addEventListener('resize', checkIfCenter);
+    window.addEventListener('scroll', checkIfCenter);
+
+    return () => {
+      window.removeEventListener('resize', checkIfCenter);
+      window.removeEventListener('scroll', checkIfCenter);
+    };
+  }, [showLevel4]);
+
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((value) => {
       if (value >= 1 && !hasScaled) {
@@ -84,17 +110,20 @@ const CenterImage = () => {
   }, [scrollYProgress, hasScaled]);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if(showLevel4) return
     const target = e.currentTarget;
     const scrollTop = target.scrollTop;
     const scrollHeight = target.scrollHeight - target.clientHeight;
     const progress = scrollTop / scrollHeight;
-
-    if (progress >= 0.25 && !showLevel1) setShowLevel1(true);
+      setHasScaled(true)
+    if (progress >= 0.1 && !showLevel1) {
+      setShowLevel1(true);
+    }
     if (progress >= 0.5 && !showLevel2) setShowLevel2(true);
     if (progress >= 0.7 && !showLevel3) setShowLevel3(true);
-    if (progress >= 0.9 && !showLevel4) {
-      setShowLevel4(true);
+    if (progress >= 0.9) {
       setShowScrollbar(false);
+      setTimeout(() => setShowLevel4(true),100)
     }
   };
 
@@ -102,16 +131,16 @@ const CenterImage = () => {
     <motion.div
       ref={ref}
       style={{
-        scale: hasScaled ? 1 : scale,
-        height: `${height + (width < 400 ? 100 : 80)}px`,
-        paddingBlock: `${width < 400 ? 50 : 10}px`,
+        // scale: hasScaled ? 1 : scale,
+        height: `${height + (width < 400 ? 120 : 80)}px`,
+        paddingBlock: `${width < 400 ? 70 : 10}px`,
       }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 5 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 2 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{
-        // margin: '-200px',
+        margin: '-200px',
         once: true,
       }}
       onScroll={handleScroll}
@@ -122,13 +151,13 @@ const CenterImage = () => {
           <img
             alt='img-2'
             src={Img2.src}
-            className='w-full h-auto object-cover'
+            className={cn(`w-full h-auto object-cover`, inView && 'zoom-in-up')}
             ref={roadRef}
           />
           <div className='absolute top-[70%] left-[55%] -translate-y-1/2 -translate-x-1/2'>
             <RoadIcon
               color={{
-                level1: showLevel1 ? '#047399' : '',
+                level1: showLevel1 ? '#0081BC' : '',
                 level2: showLevel2 ? '#00BD9C' : '',
                 level3: showLevel3 ? '#FFC500' : '',
                 level4: showLevel4 ? '#FF4B38' : '',
@@ -145,6 +174,7 @@ const CenterImage = () => {
                   className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%]'
                 />
                 <LandmarkNumberOne
+                  color={showLevel1 ? "#0081BC" : ""}
                   className={`absolute lg:-top-30 lg:left-20
                   -top-[70%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
                   -translate-y-1/4 animate-float-ease lg:w-max w-[60px]
@@ -212,7 +242,7 @@ const CenterImage = () => {
           </div>
         </div>
       </div>
-      {showScrollbar ? <div className='h-[200dvh] w-ful'></div> : null}
+      {showScrollbar ? <div className='h-[160dvh] w-ful'></div> : null}
     </motion.div>
   );
 };
