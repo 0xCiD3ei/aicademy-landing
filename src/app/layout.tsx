@@ -56,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body className="overflow-x-hidden">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
