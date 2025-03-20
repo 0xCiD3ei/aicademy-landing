@@ -1,9 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import { HTMLProps, PropsWithChildren, useState } from 'react';
+import { HTMLProps, PropsWithChildren, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
@@ -14,9 +14,17 @@ import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
 
 const images = [Interactive1, Interactive2, Interactive1, Interactive2];
-
+const CARD_OFFSET = 10;
+const SCALE_FACTOR = 0.03;
 export default function InteractiveChallenge() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const controls = useAnimation();
+
+  useEffect(() => {
+
+    controls.start("hidden")
+    setTimeout(() => controls.start("visible"), 100);
+  }, [selectedIndex]);
 
   return (
     <div className='bg-faded py-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
@@ -47,32 +55,51 @@ export default function InteractiveChallenge() {
                   />
                 ))}
               </div>
-              <div className='relative ml-16 w-max h-max'>
-                <Image
-                  alt='img-1'
-                  src={images[selectedIndex]}
-                  width={529}
-                  height={698}
-                  className='relative z-[1] max-w-[30dvw]'
-                />
-                <div className='absolute -top-10 -left-10'>
-                  <motion.div>
-                    <Image
+              <div className='relative ml-16 w-max h-[70dvh]'>
+                {selectedIndex > -1 && (
+                  <motion.img
+                    alt='img-1'
+                    src={images[selectedIndex].src}
+                    width={529}
+                    height={698}
+                    className='relative z-[1] max-w-[30dvw] h-full object-cover rounded-[40px]'
+                    style={{
+                      transformOrigin: 'top center',
+                    }}
+                    variants={{
+                      hidden: {
+                        y: -100, // Bắt đầu từ vị trí trên cùng (ngoài màn hình)
+                        opacity: 0, // Ẩn phần tử
+                      },
+                      visible: {
+                        y: 0, // Di chuyển đến vị trí gốc
+                        opacity: 1, // Hiển thị phần tử
+                        transition: {
+                          type: 'tween', // Sử dụng tween để kiểm soát thời gian
+                          duration: 0.5, // Thời gian animation
+                          ease: 'easeOut', // Hiệu ứng easing
+                        },
+                      }
+                    }}
+                    animate={controls}
+                  />
+                )}
+                <div className='absolute -top-10 -left-10 h-full'>
+                    <motion.img
                       alt='img-1'
                       src={
                         images[
                           selectedIndex - 1 < 0
                             ? images.length - 1
                             : selectedIndex - 1
-                        ]
+                        ].src
                       }
                       width={529}
                       height={698}
-                      className='max-w-[30dvw]'
+                      className='max-w-[30dvw] h-full'
                     />
-                  </motion.div>
+                 <div className ='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-full' />
                 </div>
-                {/* <div className='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-[698px]' /> */}
               </div>
             </div>
           </div>
