@@ -80,6 +80,7 @@ const CenterImage = () => {
   const roadRef = useRef<HTMLImageElement>(null);
   const controls = useAnimation();
   const inView = useInView(ref, { margin: '100px' });
+  const [isLocked, setIsLocked] = useState(false);
 
   const { width = 0, height = 0 } = useResizeObserver({
     ref: roadRef,
@@ -100,6 +101,7 @@ const CenterImage = () => {
     const isYCenter = Math.abs(elementCenterY - viewportCenterY) < 10;
 
     if (isYCenter) {
+      document.body.style.overflow = 'hidden';
       setState((prev) => ({ ...prev, showScrollbar: true }));
     }
   }, [state.showLevel4]);
@@ -129,7 +131,6 @@ const CenterImage = () => {
 
   useEffect(() => {
     if (inView) {
-      console.log('inside');
       controls.start('visible');
     }
   }, [controls, inView]);
@@ -159,10 +160,33 @@ const CenterImage = () => {
           () => setState((prev) => ({ ...prev, showLevel4: true })),
           100
         );
+        document.body.style.overflow = 'auto';
       }
     },
     [state.showLevel4, state.showLevel1, state.showLevel2, state.showLevel3]
   );
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!roadRef.current) return;
+  //
+  //     const divRect = roadRef.current.getBoundingClientRect();
+  //     const isDivInView = divRect.top <= 0 && divRect.bottom >= 0;
+  //
+  //     if (isDivInView) {
+  //       // Khóa scroll của trang web
+  //       document.body.style.overflow = 'hidden';
+  //       setIsLocked(true);
+  //     } else {
+  //       // Mở khóa scroll của trang web
+  //       document.body.style.overflow = 'auto';
+  //       setIsLocked(false);
+  //     }
+  //   };
+  //
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   const roadIconColors = useMemo(
     () => ({
