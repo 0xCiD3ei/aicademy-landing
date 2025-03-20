@@ -18,7 +18,6 @@ export default function InteractiveChallenge() {
   const controls = useAnimation();
 
   useEffect(() => {
-
     controls.start("hidden")
     setTimeout(() => controls.start("visible"), 200);
   }, [selectedIndex]);
