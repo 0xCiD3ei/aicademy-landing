@@ -1,7 +1,9 @@
 'use client';
 
+import { motion, useAnimation } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import { HTMLProps, PropsWithChildren } from 'react';
+import { HTMLProps, PropsWithChildren, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
@@ -12,8 +14,18 @@ import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
 
 const images = [Interactive1, Interactive2, Interactive1, Interactive2];
-
+const CARD_OFFSET = 10;
+const SCALE_FACTOR = 0.03;
 export default function InteractiveChallenge() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const controls = useAnimation();
+
+  useEffect(() => {
+
+    controls.start("hidden")
+    setTimeout(() => controls.start("visible"), 100);
+  }, [selectedIndex]);
+
   return (
     <div className='bg-faded py-10 md:px-[72px] px-5 overflow-visible lg:py-20'>
       <div className='flex justify-center w-full overflow-visible'>
@@ -30,29 +42,64 @@ export default function InteractiveChallenge() {
             </div>
             <div className='lg:flex items-end hidden'>
               <div className='flex flex-col mb-[120px] gap-2'>
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-black rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
-                <div className='md:w-5 md:h-5 w-3 h-3 bg-primary-foreground opacity-20 rounded-full' />
+                {images.map((_, index) => (
+                  <div
+                    className={cn(
+                      'md:w-5 md:h-5 w-3 h-3 rounded-full cursor-pointer',
+                      selectedIndex === index
+                        ? 'bg-primary-foreground'
+                        : 'bg-primary-foreground opacity-20'
+                    )}
+                    key={index}
+                    onClick={() => setSelectedIndex(index)}
+                  />
+                ))}
               </div>
-              <div className='relative ml-16 w-max h-max'>
-                <Image
-                  alt='img-1'
-                  src={Interactive1}
-                  width={529}
-                  height={698}
-                  className='relative z-[1] max-w-[30dvw]'
-                />
-                <div className='absolute -top-10 -left-10'>
-                  <Image
+              <div className='relative ml-16 w-max h-[70dvh]'>
+                {selectedIndex > -1 && (
+                  <motion.img
                     alt='img-1'
-                    src={Interactive2}
+                    src={images[selectedIndex].src}
                     width={529}
                     height={698}
-                    className='max-w-[30dvw]'
+                    className='relative z-[1] max-w-[30dvw] h-full object-cover rounded-[40px]'
+                    style={{
+                      transformOrigin: 'top center',
+                    }}
+                    variants={{
+                      hidden: {
+                        y: -100, // Bắt đầu từ vị trí trên cùng (ngoài màn hình)
+                        opacity: 0, // Ẩn phần tử
+                      },
+                      visible: {
+                        y: 0, // Di chuyển đến vị trí gốc
+                        opacity: 1, // Hiển thị phần tử
+                        transition: {
+                          type: 'tween', // Sử dụng tween để kiểm soát thời gian
+                          duration: 0.5, // Thời gian animation
+                          ease: 'easeOut', // Hiệu ứng easing
+                        },
+                      }
+                    }}
+                    animate={controls}
                   />
+                )}
+                <div className='absolute -top-10 -left-10 h-full'>
+                    <motion.img
+                      alt='img-1'
+                      src={
+                        images[
+                          selectedIndex - 1 < 0
+                            ? images.length - 1
+                            : selectedIndex - 1
+                        ].src
+                      }
+                      width={529}
+                      height={698}
+                      className='max-w-[30dvw] h-full'
+                    />
+                 <div className ='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-full' />
                 </div>
-                {/* <div className='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-[698px]' /> */}
               </div>
             </div>
           </div>
@@ -117,15 +164,17 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className='carousel-button-group  absolute bottom-1 left-0 w-full flex items-center z-50 gap-2'>
+    <div className='carousel-button-group  absolute bottom-1 left-0 w-[99%] flex items-center z-50 gap-2'>
       <Button
         className={currentSlide === 0 ? 'disable' : ''}
         onClick={() => previous()}
       >
-        Prev
+        <ChevronLeft />
       </Button>
       <div className='w-full h-[1px] bg-slate-300' />
-      <Button onClick={() => next()}>Next</Button>
+      <Button onClick={() => next()}>
+        <ChevronRight />
+      </Button>
     </div>
   );
 };
