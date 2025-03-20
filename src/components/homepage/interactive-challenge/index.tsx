@@ -1,21 +1,21 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { HTMLProps, PropsWithChildren, useState } from 'react';
 import Carousel from 'react-multi-carousel';
-import {motion} from "framer-motion"
+
 import 'react-multi-carousel/lib/styles.css';
 
 import { cn } from '@/lib/utils';
 
 import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [Interactive1, Interactive2, Interactive1, Interactive2];
 
 export default function InteractiveChallenge() {
-
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
@@ -36,7 +36,12 @@ export default function InteractiveChallenge() {
               <div className='flex flex-col mb-[120px] gap-2'>
                 {images.map((_, index) => (
                   <div
-                    className={cn('md:w-5 md:h-5 w-3 h-3 rounded-full cursor-pointer', selectedIndex === index ? 'bg-primary-foreground' : 'bg-primary-foreground opacity-20')}
+                    className={cn(
+                      'md:w-5 md:h-5 w-3 h-3 rounded-full cursor-pointer',
+                      selectedIndex === index
+                        ? 'bg-primary-foreground'
+                        : 'bg-primary-foreground opacity-20'
+                    )}
                     key={index}
                     onClick={() => setSelectedIndex(index)}
                   />
@@ -54,7 +59,13 @@ export default function InteractiveChallenge() {
                   <motion.div>
                     <Image
                       alt='img-1'
-                      src={images[selectedIndex - 1 < 0 ? images.length - 1 : selectedIndex - 1]}
+                      src={
+                        images[
+                          selectedIndex - 1 < 0
+                            ? images.length - 1
+                            : selectedIndex - 1
+                        ]
+                      }
                       width={529}
                       height={698}
                       className='max-w-[30dvw]'
@@ -134,7 +145,9 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
         <ChevronLeft />
       </Button>
       <div className='w-full h-[1px] bg-slate-300' />
-      <Button onClick={() => next()}><ChevronRight /></Button>
+      <Button onClick={() => next()}>
+        <ChevronRight />
+      </Button>
     </div>
   );
 };

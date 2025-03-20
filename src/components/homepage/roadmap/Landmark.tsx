@@ -3,7 +3,13 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 
-function LandmarkNumberOne({ className, color }: { className?: string, color: string }) {
+function LandmarkNumberOne({
+  className,
+  color,
+}: {
+  className?: string;
+  color: string;
+}) {
   // #0081BC
   return (
     <svg

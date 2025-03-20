@@ -1,12 +1,16 @@
 'use client';
 
 import { motion, useAnimation, useInView, useScroll } from 'framer-motion';
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useResizeObserver } from 'usehooks-ts';
+
 import { cn } from '@/lib/utils';
+
 import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
+
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
+
 import {
   LandmarkNumberFour,
   LandmarkNumberOne,
@@ -55,17 +59,6 @@ export default function Section3() {
   );
 }
 
-const isElementInViewport = (el: HTMLElement) => {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
-
 const CenterImage = () => {
   const [state, setState] = useState({
     hasScaled: false,
@@ -80,7 +73,6 @@ const CenterImage = () => {
   const roadRef = useRef<HTMLImageElement>(null);
   const controls = useAnimation();
   const inView = useInView(ref, { margin: '100px' });
-  const [isLocked, setIsLocked] = useState(false);
 
   const { width = 0, height = 0 } = useResizeObserver({
     ref: roadRef,
@@ -165,28 +157,6 @@ const CenterImage = () => {
     },
     [state.showLevel4, state.showLevel1, state.showLevel2, state.showLevel3]
   );
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!roadRef.current) return;
-  //
-  //     const divRect = roadRef.current.getBoundingClientRect();
-  //     const isDivInView = divRect.top <= 0 && divRect.bottom >= 0;
-  //
-  //     if (isDivInView) {
-  //       // Khóa scroll của trang web
-  //       document.body.style.overflow = 'hidden';
-  //       setIsLocked(true);
-  //     } else {
-  //       // Mở khóa scroll của trang web
-  //       document.body.style.overflow = 'auto';
-  //       setIsLocked(false);
-  //     }
-  //   };
-  //
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
 
   const roadIconColors = useMemo(
     () => ({
@@ -309,45 +279,6 @@ const CenterImage = () => {
         </motion.div>
       </div>
       {state.showScrollbar && <div className='h-[160dvh] w-ful'></div>}
-    </motion.div>
-  );
-};
-
-const LandmarkComponent = ({
-  level,
-  color,
-}: {
-  level: number;
-  color: string;
-}) => {
-  const Landmark = [
-    LandmarkNumberOne,
-    LandmarkNumberTwo,
-    LandmarkNumberThree,
-    LandmarkNumberFour,
-  ][level - 1];
-  const content = [
-    'Choose a Course',
-    'Learn with AI mentor',
-    'Complete Exercises',
-    'Earn Blockchain Certificates',
-  ][level - 1];
-
-  const className = [
-    'lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%]',
-    'lg:top-20 lg:-right-56 top-20 -right-40 animate-float-ease',
-    'lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-60 md:-left-36',
-    'lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[30%] animate-float-ease',
-  ][level - 1];
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
-    >
-      <ContentModal content={content} className={className} />
-      <Landmark color={color} className={className} />
     </motion.div>
   );
 };
