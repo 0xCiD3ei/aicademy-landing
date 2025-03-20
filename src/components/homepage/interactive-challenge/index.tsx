@@ -126,7 +126,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className='carousel-button-group  absolute bottom-1 left-0 w-full flex items-center z-50 gap-2'>
+    <div className='carousel-button-group  absolute bottom-1 left-0 w-[99%] flex items-center z-50 gap-2'>
       <Button
         className={currentSlide === 0 ? 'disable' : ''}
         onClick={() => previous()}
