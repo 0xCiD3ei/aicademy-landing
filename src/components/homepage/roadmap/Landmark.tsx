@@ -15,7 +15,7 @@ function LandmarkNumberOne({
     <svg
       className={className}
       xmlns='http://www.w3.org/2000/svg'
-      width='115'
+      width='100'
       height='160'
       viewBox='0 0 115 160'
       fill='none'
@@ -73,7 +73,7 @@ function LandmarkNumberTwo({
     <svg
       className={className}
       xmlns='http://www.w3.org/2000/svg'
-      width='131'
+      width='125'
       height='180'
       viewBox='0 0 131 180'
       fill='none'
@@ -125,7 +125,7 @@ function LandmarkNumberThree({
     <svg
       className={className}
       xmlns='http://www.w3.org/2000/svg'
-      width='172'
+      width='140'
       height='236'
       viewBox='0 0 172 236'
       fill='none'
@@ -177,7 +177,7 @@ function LandmarkNumberFour({
     <svg
       className={className}
       xmlns='http://www.w3.org/2000/svg'
-      width='209'
+      width='160'
       height='287'
       viewBox='0 0 209 287'
       fill='none'

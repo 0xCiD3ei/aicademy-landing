@@ -10,6 +10,7 @@ import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
 
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
+import Car from "@/assets/homepage/car.png"
 
 import {
   LandmarkNumberFour,
@@ -205,9 +206,10 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
+                {!state.showLevel2 && <img src={Car.src} className='w-auto h-auto object-cover absolute -top-[1%] left-[12%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
                 <ContentModal
                   content='Choose a Course'
-                  className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%]'
+                  className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[30%] md:w-[150px] md:-top-[15%] -top-[35%] -left-[53%]'
                 />
                 <LandmarkNumberOne
                   color={state.showLevel1 ? '#0081BC' : ''}
@@ -225,9 +227,10 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
+                {!state.showLevel3 && <img src={Car.src} className='w-auto h-auto object-cover absolute top-[22%] right-[8%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
                 <ContentModal
                   content='Learn with AI mentor'
-                  className='lg:top-20 lg:-right-56 top-20 -right-40 animate-float-ease'
+                  className='lg:top-20 lg:-right-56 top-[10%] w-[150px] sm:w-max sm:-right-[40%] -right-[60%] animate-float-ease'
                 />
                 <LandmarkNumberTwo
                   color={state.showLevel2 ? '#00BD9C' : ''}
@@ -244,9 +247,10 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
+                {!state.showLevel4 && <img src={Car.src} className='w-auto h-auto object-cover absolute top-[38%] left-[15%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
                 <ContentModal
                   content='Complete Exercises'
-                  className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-60 md:-left-36 '
+                  className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-30 md:-left-36 bottom-[50%] -left-[65%]'
                 />
                 <LandmarkNumberThree
                   color={state.showLevel3 ? '#FFC500' : ''}
@@ -262,13 +266,14 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
+                {state.showLevel4 && <img src={Car.src} className='w-auto h-auto object-cover absolute bottom-[10%] left-[40%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
                 <ContentModal
                   content='Earn Blockchain Certificates'
-                  className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[30%] animate-float-ease'
+                  className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[30%] animate-float-ease bottom-[10%] -right-[65%]'
                 />
                 <LandmarkNumberFour
                   color={state.showLevel4 ? '#FF4B38' : ''}
-                  className={`absolute lg:bottom-20 lg:right-10 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
+                  className={`absolute lg:bottom-20 lg:right-15 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
                   -bottom-[20%] right-[20%] w-[70px] sm:w-[80px] sm:-bottom-[10%] sm:right-[20%]
                   md:bottom-[1%] md:right-[20%] md:w-[90px]
                 `}

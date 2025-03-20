@@ -2,7 +2,6 @@
 
 import { motion, useAnimation } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
 import { HTMLProps, PropsWithChildren, useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 
@@ -14,8 +13,6 @@ import Interactive1 from '@/assets/homepage/interactive-1.png';
 import Interactive2 from '@/assets/homepage/interactive-2.png';
 
 const images = [Interactive1, Interactive2, Interactive1, Interactive2];
-const CARD_OFFSET = 10;
-const SCALE_FACTOR = 0.03;
 export default function InteractiveChallenge() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const controls = useAnimation();
@@ -23,7 +20,7 @@ export default function InteractiveChallenge() {
   useEffect(() => {
 
     controls.start("hidden")
-    setTimeout(() => controls.start("visible"), 100);
+    setTimeout(() => controls.start("visible"), 200);
   }, [selectedIndex]);
 
   return (
@@ -68,7 +65,7 @@ export default function InteractiveChallenge() {
                     }}
                     variants={{
                       hidden: {
-                        y: -100, // Bắt đầu từ vị trí trên cùng (ngoài màn hình)
+                        y: -40, // Bắt đầu từ vị trí trên cùng (ngoài màn hình)
                         opacity: 0, // Ẩn phần tử
                       },
                       visible: {
