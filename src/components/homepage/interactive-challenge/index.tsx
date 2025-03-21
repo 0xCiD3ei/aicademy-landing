@@ -157,18 +157,21 @@ const ImageCarouselMobile = () => {
 
 const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
   const {
-    carouselState: { currentSlide },
+    carouselState: { currentSlide, totalItems, slidesToShow },
   } = rest;
+
   return (
     <div className='carousel-button-group  absolute bottom-1 left-0 w-[99%] flex items-center z-50 gap-2'>
       <Button
         className={currentSlide === 0 ? 'disable' : ''}
         onClick={() => previous()}
+        disabled={currentSlide === 0}
       >
         <ChevronLeft />
       </Button>
       <div className='w-full h-[1px] bg-slate-300' />
-      <Button onClick={() => next()}>
+      <Button onClick={() => next()}
+      disabled={currentSlide + slidesToShow === totalItems}>
         <ChevronRight />
       </Button>
     </div>
@@ -184,7 +187,8 @@ const Button = ({
       {...(props as any)}
       className={cn(
         '@apply shadow-[2px_2px_0px_0px_#CACACA] rounded-lg p-2 flex justify-center items-center active:shadow-none transition-all duration-100 border-gray-50 bg-white',
-        props.className
+        props.className,
+        props.disabled && 'opacity-50 cursor-not-allowed'
       )}
     >
       {children}

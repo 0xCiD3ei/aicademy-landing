@@ -12,7 +12,7 @@ export const ContentModal = ({
     <div
       {...props}
       className={cn(
-        'absolute text-white rounded-xl lg:max-w-[240px] md:max-w-[130px] max-w-[90px] bg-[#484242] text-center sm:p-2 p-1 inline-block',
+        'absolute text-white rounded-xl lg:max-w-[240px] sm:max-w-[130px] max-w-[90px] bg-[#484242] text-center sm:p-2 p-1 inline-block',
         props.className
       )}
     >
