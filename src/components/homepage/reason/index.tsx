@@ -11,8 +11,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import Rabbit from '@/assets/homepage/rabbit-1.png';
 import Thumbnail from '@/assets/homepage/thumbnail-1.png';
+import { cn } from '@/lib/utils';
 
-export default function Section1() {
+export default function Reason() {
   const bgRef = useRef(null);
   const textRef = useRef(null);
   const textSectionRef = useRef<HTMLDivElement>(null);
@@ -73,9 +74,15 @@ export default function Section1() {
 
   return (
     <>
-      <div className='relative bg-secondary xl:pt-[286px] xl:pb-[300px] overflow-hidden [clip-path:polygon(0%_0%,100%_0%, 100%_100%)]'>
+      <div className='relative xl:pt-[286px] xl:pb-[300px] overflow-hidden'>
+        <div
+          className='absolute mt-12 inset-0 bg-center bg-secondary w-full h-full'
+          style={{
+            clipPath: 'polygon(100% 2.55%, 100% 95%, 0% 100%, 0% 0%)',
+          }}
+        />
         <div className='absolute top-0 left-0 bg-[url(/images/section-bg.png)] bg-center w-full h-full' />
-        <div className='absolute top-10 -left-10 flex items-center overflow-hidden rotate-[2.55deg]'>
+        <div className='absolute top-10 -left-10 flex items-center overflow-hidden rotate-[1.5deg]'>
           <motion.div
             ref={topRowRef}
             style={{ x: xTop }}
@@ -84,7 +91,10 @@ export default function Section1() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className='py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]'
+                className={cn(
+                  'py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]',
+                  ele === 1 && 'pl-[5px] md:pl-2.5 xl:pl-5'
+                )}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img
@@ -106,7 +116,10 @@ export default function Section1() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className='py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]'
+                className={cn(
+                  'py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]',
+                  ele === 1 && 'pl-[5px] md:pl-2.5 xl:pl-5'
+                )}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img
@@ -122,7 +135,7 @@ export default function Section1() {
 
         <div
           ref={textSectionRef}
-          className='h-[800px] md:h-[1000px] lg:h-[1129px] flex items-center justify-center flex-col'
+          className='relative h-[800px] md:h-[1000px] lg:h-[1129px] flex items-center justify-center flex-col'
         >
           <h2 className='text-center text-primary-foreground font-semibold text-sm md:text-2xl xl:text-5xl'>
             What is{' '}
@@ -255,7 +268,7 @@ export default function Section1() {
 
 function MenuDialog() {
   return (
-    <div className='absolute -bottom-[70px] -right-[150px] xl:-bottom-[100px] translate-y-1/2 xl:-right-52 bg-[#D7E5E9] rounded-xl px-2 py-1.5 xl:py-[10px] xl:px-3 w-[127px] md:w-[150px] xl:w-[184px] h-auto'>
+    <div className='absolute -bottom-[50px] -right-[130px] sm:-bottom-[70px] sm:-right-[150px] xl:-bottom-[100px] translate-y-1/2 xl:-right-52 bg-[#D7E5E9] rounded-xl px-2 py-1.5 xl:py-[10px] xl:px-3 w-[127px] md:w-[150px] xl:w-[184px] h-auto'>
       <div className='flex flex-col'>
         <div className='bg-[#1AADB5] p-[5px] xl:p-2 flex items-center justify-between text-[10px] md:text-xs xl:text-sm leading-[120%] rounded text-white'>
           Explain
@@ -379,30 +392,30 @@ function MenuDialog() {
 
 function ChatBotDialog() {
   return (
-    <div className='absolute bottom-[40px] left-[60%] md:right-0 xl:-bottom-2/3 xl:-right-1/3  -translate-x-1/2 xl:-translate-y-1/2 w-[300px] sm:w-[360px] xl:w-[420px] h-auto bg-[#E1EEE9] rounded-3xl drop-shadow-[0px_3px_7px_rgba(0,0,0,0.1)]'>
-      <div className='flex flex-col gap-2 xl:gap-4 px-3 py-4 xl:py-6 xl:px-4'>
+    <div className='absolute bottom-[40px] left-[60%] md:right-0 xl:-bottom-2/3 xl:-right-1/3  -translate-x-1/2 xl:-translate-y-1/2 w-[230px] sm:w-[300px] sm:w-[360px] xl:w-[420px] h-auto bg-[#E1EEE9] rounded-3xl drop-shadow-[0px_3px_7px_rgba(0,0,0,0.1)]'>
+      <div className='flex flex-col gap-2 xl:gap-4 px-2 py-[10.75px] sm:px-3 sm:py-4 xl:py-6 xl:px-4'>
         <div className='flex items-center gap-[7px] xl:gap-1.5'>
-          <div className='w-4 h-4 xl:w-6 xl:h-6 rounded-full bg-[#E1EEE9] border border-[#000000]/10' />
-          <span className='text-xs xl:text-base font-semibold leading-5'>
+          <div className='w-3 h-3 sm:w-4 sm:h-4 xl:w-6 xl:h-6 rounded-full bg-[#E1EEE9] border border-[#000000]/10' />
+          <span className='text-[10px] sm:text-xs xl:text-base font-semibold leading-5'>
             You
           </span>
         </div>
-        <p className='text-xs xl:text-sm leading-[150%]'>
+        <p className='text-[10px] sm:text-xs xl:text-sm leading-[150%]'>
           Can you explain more about AI prompt?
         </p>
       </div>
-      <div className='bg-[#CDDCD6] px-3 py-4 xl:py-6 xl:px-4'>
-        <div className='flex flex-col gap-2 xl:gap-4'>
+      <div className='bg-[#CDDCD6] px-2 py-[10.75px] sm:px-3 sm:py-4 xl:py-6 xl:px-4'>
+        <div className='flex flex-col gap-1 sm:gap-2 xl:gap-4'>
           <div className='flex items-center gap-1.5'>
-            <div className='w-4 h-4 xl:w-6 xl:h-6 rounded-full bg-[#E1EEE9] border border-[#000000]/10' />
-            <span className='text-xs xl:text-base font-semibold leading-5'>
+            <div className='w-3 h-3 sm:w-4 sm:h-4 xl:w-6 xl:h-6 rounded-full bg-[#E1EEE9] border border-[#000000]/10' />
+            <span className='text-[10px] sm:text-xs xl:text-base font-semibold leading-5'>
               AI Mentor
             </span>
           </div>
-          <p className='text-xs xl:text-sm text-[#2F2F2F] leading-[150%]'>
+          <p className='text-[10px] sm:text-xs xl:text-sm text-[#2F2F2F] leading-[150%]'>
             Can you explain more about AI prompt?
           </p>
-          <div className='bg-[#F1FFFC] py-5 px-3 rounded-[4px] border-l-2 xl:border-l-4 border-[#1AADB5] font-medium leading-[140%] text-[#484242] text-xs xl:text-base'>
+          <div className='bg-[#F1FFFC] px-[5px] py-[9px] sm:py-5 sm:px-3 rounded-[4px] border-l-2 xl:border-l-4 border-[#1AADB5] font-medium leading-[140%] text-[#484242] text-[8px] sm:text-xs xl:text-base'>
             An AI prompt is an instruction or input given to an AI model to
             generate a specific response. A well-crafted prompt helps the AI
             produce clear, relevant, and high-quality output.
@@ -434,7 +447,7 @@ function ChatBotDialog() {
                   strokeLinejoin='round'
                 />
               </svg>
-              <span className='text-xs xl:text-sm text-[#776F69] leading-[18px]'>
+              <span className='text-[10px] sm:text-xs xl:text-sm text-[#776F69] leading-[18px]'>
                 Copy
               </span>
             </div>
@@ -462,16 +475,16 @@ function ChatBotDialog() {
                   strokeLinejoin='round'
                 />
               </svg>
-              <span className='text-xs xl:text-sm text-[#776F69] leading-[18px]'>
+              <span className='text-[10px] sm:text-xs xl:text-sm text-[#776F69] leading-[18px]'>
                 Regenerate
               </span>
             </div>
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-4 xl:mt-[13px] py-2 xl:py-4 px-2.5 '>
+      <div className='flex flex-col gap-4 xl:mt-[13px] py-[7px] px-2 sm:py-2 xl:py-4 sm:px-2.5 '>
         <div className='bg-[#FFFFFF] rounded-[30px] px-2 py-2.5 xl:px-4 h-8 xl:h-11 border border-[#776F69]/28 flex items-center justify-between'>
-          <span className='text-xs xl:text-base text-[#838383] leading-[150%]'>
+          <span className='text-[10px] sm:text-xs xl:text-base text-[#838383] leading-[150%]'>
             Ask me anything...
           </span>
           <div className='bg-[#1AADB5] w-6 h-6 xl:w-8 xl:h-8 rounded-full flex items-center justify-center'>
@@ -522,7 +535,7 @@ function ChatBotDialog() {
           />
         </svg>
       </div>
-      <div className='absolute -bottom-10 -left-1/3 xl:bottom-10 xl:-right-[150%] translate-x-1/2 translate-y-1/2'>
+      <div className='absolute  -bottom-10 -left-[100px] sm:-left-1/3 xl:bottom-10 xl:-right-[150%] translate-x-1/2 translate-y-1/2'>
         <img
           alt='rabbit'
           src={Rabbit.src}

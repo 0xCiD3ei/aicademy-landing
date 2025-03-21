@@ -10,7 +10,7 @@ import RoadIcon from '@/components/homepage/roadmap/RoadIcon';
 
 import Img1 from '@/assets/homepage/section3-1.png';
 import Img2 from '@/assets/homepage/section3-2.png';
-import Car from "@/assets/homepage/car.png"
+import Car from '@/assets/homepage/car.png';
 
 import {
   LandmarkNumberFour,
@@ -206,7 +206,12 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
-                {!state.showLevel2 && <img src={Car.src} className='w-auto h-auto object-cover absolute -top-[1%] left-[12%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
+                {!state.showLevel2 && (
+                  <img
+                    src={Car.src}
+                    className='w-auto h-auto object-cover absolute -top-[1%] left-[12%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                  />
+                )}
                 <ContentModal
                   content='Choose a Course'
                   className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[25%] md:w-[150px] md:-top-[15%] sm:-top-[30%] sm:-left-[35%] -top-[30%] -left-[35%]'
@@ -227,7 +232,12 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
-                {!state.showLevel3 && <img src={Car.src} className='w-auto h-auto object-cover absolute top-[22%] right-[8%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
+                {!state.showLevel3 && (
+                  <img
+                    src={Car.src}
+                    className='w-auto h-auto object-cover absolute top-[22%] right-[8%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                  />
+                )}
                 <ContentModal
                   content='Learn with AI mentor'
                   className='lg:top-20 lg:-right-56 sm:top-[10%] sm:w-[150px] md:w-max md:-right-[35%] sm:-right-[45%] animate-float-ease top-[9%] -right-[26%]'
@@ -247,7 +257,12 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
-                {!state.showLevel4 && <img src={Car.src} className='w-auto h-auto object-cover absolute top-[38%] left-[15%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
+                {!state.showLevel4 && (
+                  <img
+                    src={Car.src}
+                    className='w-auto h-auto object-cover absolute top-[38%] left-[15%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                  />
+                )}
                 <ContentModal
                   content='Complete Exercises'
                   className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-30 md:-left-[20%] sm:bottom-[50%] sm:-left-[28%] bottom-[55%] -left-[42%]'
@@ -266,7 +281,12 @@ const CenterImage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
               >
-                {state.showLevel4 && <img src={Car.src} className='w-auto h-auto object-cover absolute bottom-[10%] left-[40%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]' />}
+                {state.showLevel4 && (
+                  <img
+                    src={Car.src}
+                    className='w-auto h-auto object-cover absolute bottom-[10%] left-[40%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                  />
+                )}
                 <ContentModal
                   content='Earn Blockchain Certificates'
                   className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[20%] animate-float-ease sm:bottom-[10%] sm:-right-[25%] bottom-[18%] -right-[20%]'

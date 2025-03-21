@@ -50,7 +50,7 @@ export default function Banner() {
           clearInterval(typingInterval);
           setTimeout(() => {
             typingInterval = setInterval(typeNextChar, 50);
-          }, 1000);
+          }, 100);
         }
       } else {
         clearInterval(typingInterval);
@@ -59,7 +59,7 @@ export default function Banner() {
 
     const startTimeout = setTimeout(() => {
       typingInterval = setInterval(typeNextChar, 50);
-    }, 1000);
+    }, 100);
 
     return () => {
       clearTimeout(startTimeout);
