@@ -173,8 +173,8 @@ const CenterImage = () => {
     <motion.div
       ref={ref}
       style={{
-        height: `${height + (width < 450 ? 120 : 80)}px`,
-        paddingBlock: `${width < 450 ? 70 : 10}px`,
+        height: `${height + (width < 450 ? 80 : 80)}px`,
+        paddingTop: `${width < 450 ? 35 : 10}px`,
       }}
       onScroll={handleScroll}
       className={cn(
@@ -209,7 +209,7 @@ const CenterImage = () => {
                 {!state.showLevel2 && (
                   <img
                     src={Car.src}
-                    className='w-auto h-auto object-cover absolute -top-[1%] left-[12%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                    className='w-auto h-auto object-cover absolute -top-[1%] left-[12%] lg:max-w-[100px] sm:max-w-[70px] max-w-[30px]'
                   />
                 )}
                 <ContentModal
@@ -219,8 +219,8 @@ const CenterImage = () => {
                 <LandmarkNumberOne
                   color={state.showLevel1 ? '#0081BC' : ''}
                   className={`absolute lg:-top-30 lg:left-20
-                  -top-[70%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
-                  -translate-y-1/4 animate-float-ease lg:w-max w-[50px]
+                  -top-[60%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
+                  -translate-y-1/4 animate-float-ease lg:w-max w-[40px]
                   md:left-[8%] md:w-[90px] md:-top-[28%]
                   `}
                 />
@@ -235,17 +235,17 @@ const CenterImage = () => {
                 {!state.showLevel3 && (
                   <img
                     src={Car.src}
-                    className='w-auto h-auto object-cover absolute top-[22%] right-[8%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                    className='w-auto h-auto object-cover absolute top-[22%] right-[8%] lg:max-w-[100px] sm:max-w-[70px] max-w-[45px]'
                   />
                 )}
                 <ContentModal
                   content='Learn with AI mentor'
-                  className='lg:top-20 lg:-right-56 sm:top-[10%] sm:w-[150px] md:w-max md:-right-[35%] sm:-right-[45%] animate-float-ease top-[9%] -right-[26%]'
+                  className='lg:top-20 lg:-right-56 sm:top-[10%] sm:w-[150px] md:w-max md:-right-[35%] sm:-right-[45%] animate-float-ease top-[9%] -right-[20%]'
                 />
                 <LandmarkNumberTwo
                   color={state.showLevel2 ? '#00BD9C' : ''}
                   className={`absolute lg:-top-14 lg:right-0 -translate-x-1/4 -translate-y-1/4
-                  -top-[50%] -right-[0%] w-[50px] lg:w-max sm:-top-[28%] sm:right-[0%] sm:w-[80px]
+                  -top-[50%] -right-[0%] w-[40px] lg:w-max sm:-top-[28%] sm:right-[0%] sm:w-[80px]
                   md:-top-[18%] md:right-[0%] md:w-[90px]
                   animate-float-ease`}
                 />
@@ -270,7 +270,7 @@ const CenterImage = () => {
                 <LandmarkNumberThree
                   color={state.showLevel3 ? '#FFC500' : ''}
                   className={`absolute lg:bottom-64 lg:-left-10 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  bottom-[16%] left-[1%] w-[50px] sm:w-[80px] sm:bottom-[30%] sm:left-[15%]
+                  bottom-[16%] left-[1%] w-[40px] sm:w-[80px] sm:bottom-[30%] sm:left-[15%]
                   md:bottom-[40%] md:left-[10%] md:w-[90px]`}
                 />
               </motion.div>
@@ -294,7 +294,7 @@ const CenterImage = () => {
                 <LandmarkNumberFour
                   color={state.showLevel4 ? '#FF4B38' : ''}
                   className={`absolute lg:bottom-20 lg:right-15 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  -bottom-[20%] right-[20%] w-[60px] sm:w-[80px] sm:-bottom-[10%] sm:right-[20%]
+                  -bottom-[20%] right-[20%] w-[50px] sm:w-[80px] sm:-bottom-[10%] sm:right-[20%]
                   md:bottom-[1%] md:right-[20%] md:w-[90px]
                 `}
                 />
