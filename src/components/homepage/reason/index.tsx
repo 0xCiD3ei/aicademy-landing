@@ -74,12 +74,13 @@ export default function Reason() {
 
   return (
     <>
-      <div className='relative xl:pt-[286px] xl:pb-[300px] overflow-hidden'
-
-      >
-        <div className="absolute mt-12 inset-0 bg-center bg-secondary w-full h-full" style={{
-          clipPath: "polygon(100% 2.55%, 100% 95%, 0% 100%, 0% 0%)"
-        }} />
+      <div className='relative xl:pt-[286px] xl:pb-[300px] overflow-hidden'>
+        <div
+          className='absolute mt-12 inset-0 bg-center bg-secondary w-full h-full'
+          style={{
+            clipPath: 'polygon(100% 2.55%, 100% 95%, 0% 100%, 0% 0%)',
+          }}
+        />
         <div className='absolute top-0 left-0 bg-[url(/images/section-bg.png)] bg-center w-full h-full' />
         <div className='absolute top-10 -left-10 flex items-center overflow-hidden rotate-[1.5deg]'>
           <motion.div
@@ -90,7 +91,10 @@ export default function Reason() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className={cn('py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]', ele === 1 && "pl-[5px] md:pl-2.5 xl:pl-5")}
+                className={cn(
+                  'py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]',
+                  ele === 1 && 'pl-[5px] md:pl-2.5 xl:pl-5'
+                )}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img
@@ -112,7 +116,10 @@ export default function Reason() {
             {[1, 2, 3, 4, 5, 6].map((ele) => (
               <div
                 key={ele}
-                className={cn('py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]', ele === 1 && "pl-[5px] md:pl-2.5 xl:pl-5")}
+                className={cn(
+                  'py-[5px] pr-[5px] md:py-2.5 md:pr-2.5 xl:py-5 xl:pr-5 bg-[#070612]',
+                  ele === 1 && 'pl-[5px] md:pl-2.5 xl:pl-5'
+                )}
               >
                 <div className='w-[154px] h-[109px] md:w-[282px] md:h-[200px] xl:w-[560px] xl:h-[364px]'>
                   <img

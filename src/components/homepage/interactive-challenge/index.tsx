@@ -18,9 +18,8 @@ export default function InteractiveChallenge() {
   const controls = useAnimation();
 
   useEffect(() => {
-
-    controls.start("hidden")
-    setTimeout(() => controls.start("visible"), 200);
+    controls.start('hidden');
+    setTimeout(() => controls.start('visible'), 200);
   }, [selectedIndex]);
 
   return (
@@ -76,26 +75,26 @@ export default function InteractiveChallenge() {
                           duration: 0.5, // Thời gian animation
                           ease: 'easeOut', // Hiệu ứng easing
                         },
-                      }
+                      },
                     }}
                     animate={controls}
                   />
                 )}
                 <div className='absolute -top-10 -left-10 h-full'>
-                    <motion.img
-                      alt='img-1'
-                      src={
-                        images[
-                          selectedIndex - 1 < 0
-                            ? images.length - 1
-                            : selectedIndex - 1
-                        ].src
-                      }
-                      width={529}
-                      height={698}
-                      className='max-w-[30dvw] h-full'
-                    />
-                 <div className ='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-full' />
+                  <motion.img
+                    alt='img-1'
+                    src={
+                      images[
+                        selectedIndex - 1 < 0
+                          ? images.length - 1
+                          : selectedIndex - 1
+                      ].src
+                    }
+                    width={529}
+                    height={698}
+                    className='max-w-[30dvw] h-full'
+                  />
+                  <div className='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-full' />
                 </div>
               </div>
             </div>
