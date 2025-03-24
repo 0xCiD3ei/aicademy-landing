@@ -31,7 +31,7 @@ export default function InteractiveChallenge() {
               <h3 className='font-dela-gothic-one md:text-4xl lg:text-5xl text-3xl tracking-[1%] max-w-[480px]'>
                 Interactive Challenges
               </h3>
-              <p className='md:text-2xl text-lg tracking-[1%] lg:w-[70%] md:w-[90%] w-full'>
+              <p className='md:text-2xl text-lg tracking-[1%] md:w-[90%] w-full'>
                 Dive into hands-on lessons with real-time feedback, gamified
                 challenges.
               </p>
@@ -56,9 +56,7 @@ export default function InteractiveChallenge() {
                   <motion.img
                     alt='img-1'
                     src={images[selectedIndex].src}
-                    width={529}
-                    height={698}
-                    className='relative z-[1] max-w-[30dvw] h-full object-cover rounded-[40px]'
+                    className='relative z-[1] h-full max-h-[661.5px] object-cover rounded-[40px]'
                     style={{
                       transformOrigin: 'top center',
                     }}
@@ -92,7 +90,7 @@ export default function InteractiveChallenge() {
                       }
                       width={529}
                       height={698}
-                      className='max-w-[30dvw] h-full'
+                      className=' h-full max-h-[661.5px]'
                     />
                  <div className ='absolute inset-0 bg-black bg-opacity-40 rounded-[40px] h-full' />
                 </div>
