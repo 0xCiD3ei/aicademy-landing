@@ -24,7 +24,7 @@ export default function Section3() {
   return (
     <>
       <div className='flex justify-center'>
-        <div className='flex lg:flex-row flex-col justify-center items-center gap-2 md:my-20 my-10 md:max-w-[1320px]'>
+        <div className='flex lg:flex-row flex-col-reverse justify-center items-center gap-2 md:my-20 my-10 md:max-w-[1320px]'>
           <img
             alt='img-1'
             src={Img1.src}
@@ -32,8 +32,8 @@ export default function Section3() {
             height={433}
             className='object-cover h-auto flex-1'
           />
-          <div className='flex flex-col text-primary-foreground lg:text-left text-center lg:gap-6 gap-3 lg:w-[50%] flex-1'>
-            <h3 className='lg:text-5xl text-3xl text-center lg:text-left tracking-[1%] capitalize lg:max-w-[313px] block'>
+          <div className='flex flex-col text-primary-foreground text-left px-5 lg:gap-6 gap-3 lg:w-[50%] flex-1'>
+            <h3 className='font-dela-gothic-one lg:text-5xl text-3xl text-left tracking-[1%] capitalize max-w-[200px] sm:max-w-max lg:max-w-[313px] block'>
               Ultimate motivation
             </h3>
             <p className='max-w-max lg:text-2xl text-lg tracking-[1%] inline'>
@@ -214,13 +214,13 @@ const CenterImage = () => {
                 )}
                 <ContentModal
                   content='Choose a Course'
-                  className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[25%] md:w-[150px] md:-top-[15%] sm:-top-[30%] sm:-left-[35%] -top-[30%] -left-[35%]'
+                  className='lg:-top-32 z-50 lg:-left-20 animate-float-ease md:-left-[25%] md:w-[150px] md:-top-[15%] sm:-top-[30%] sm:-left-[35%] -top-[20%] -left-[35%]'
                 />
                 <LandmarkNumberOne
                   color={state.showLevel1 ? '#0081BC' : ''}
                   className={`absolute lg:-top-30 lg:left-20
-                  -top-[60%] left-[10%] sm:-top-[40%] sm:left-[8%] sm:w-[80px] -translate-x-1/4 
-                  -translate-y-1/4 animate-float-ease lg:w-max w-[40px]
+                  -top-[60%] left-[14%] sm:-top-[40%] sm:left-[8%] sm:w-[60px] -translate-x-1/4 
+                  -translate-y-1/4 animate-float-ease lg:w-max w-[30px]
                   md:left-[8%] md:w-[90px] md:-top-[28%]
                   `}
                 />
@@ -240,12 +240,12 @@ const CenterImage = () => {
                 )}
                 <ContentModal
                   content='Learn with AI mentor'
-                  className='lg:top-20 lg:-right-56 sm:top-[10%] sm:w-[150px] md:w-max md:-right-[35%] sm:-right-[45%] animate-float-ease top-[9%] -right-[20%]'
+                  className='lg:top-20 lg:-right-56 sm:top-[10%] sm:w-[150px] md:w-max md:-right-[35%] sm:-right-[45%] animate-float-ease top-[15%] -right-[18%]'
                 />
                 <LandmarkNumberTwo
                   color={state.showLevel2 ? '#00BD9C' : ''}
                   className={`absolute lg:-top-14 lg:right-0 -translate-x-1/4 -translate-y-1/4
-                  -top-[50%] -right-[0%] w-[40px] lg:w-max sm:-top-[28%] sm:right-[0%] sm:w-[80px]
+                  -top-[50%] -right-[0%] w-[30px] lg:w-max sm:-top-[28%] sm:right-[0%] sm:w-[60px]
                   md:-top-[18%] md:right-[0%] md:w-[90px]
                   animate-float-ease`}
                 />
@@ -260,17 +260,17 @@ const CenterImage = () => {
                 {!state.showLevel4 && (
                   <img
                     src={Car.src}
-                    className='w-auto h-auto object-cover absolute top-[38%] left-[15%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
+                    className='w-auto h-auto object-cover absolute top-[34%] left-[10%] lg:max-w-[100px] sm:max-w-[70px] max-w-[50px]'
                   />
                 )}
                 <ContentModal
                   content='Complete Exercises'
-                  className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-30 md:-left-[20%] sm:bottom-[50%] sm:-left-[28%] bottom-[55%] -left-[42%]'
+                  className='lg:bottom-80 lg:-left-72 animate-float-ease md:bottom-30 md:-left-[20%] sm:bottom-[50%] sm:-left-[28%] bottom-[40%] -left-[35%]'
                 />
                 <LandmarkNumberThree
                   color={state.showLevel3 ? '#FFC500' : ''}
                   className={`absolute lg:bottom-64 lg:-left-10 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  bottom-[16%] left-[1%] w-[40px] sm:w-[80px] sm:bottom-[30%] sm:left-[15%]
+                  bottom-[16%] left-[10%] w-[30px] sm:w-[60px] sm:bottom-[30%] sm:left-[15%]
                   md:bottom-[40%] md:left-[10%] md:w-[90px]`}
                 />
               </motion.div>
@@ -289,12 +289,12 @@ const CenterImage = () => {
                 )}
                 <ContentModal
                   content='Earn Blockchain Certificates'
-                  className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[20%] animate-float-ease sm:bottom-[10%] sm:-right-[25%] bottom-[18%] -right-[20%]'
+                  className='lg:bottom-5 lg:-right-40 md:bottom-[20%] md:-right-[20%] animate-float-ease sm:bottom-[10%] sm:-right-[25%] bottom-[18%] -right-[18%]'
                 />
                 <LandmarkNumberFour
                   color={state.showLevel4 ? '#FF4B38' : ''}
                   className={`absolute lg:bottom-20 lg:right-15 lg:w-max -translate-y-1/3 -translate-x-1/3 animate-float-ease
-                  -bottom-[20%] right-[20%] w-[50px] sm:w-[80px] sm:-bottom-[10%] sm:right-[20%]
+                  -bottom-[20%] right-[30%] w-[30px] sm:w-[60px] sm:-bottom-[10%] sm:right-[20%]
                   md:bottom-[1%] md:right-[20%] md:w-[90px]
                 `}
                 />

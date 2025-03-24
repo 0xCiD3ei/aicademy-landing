@@ -22,7 +22,7 @@ const RoadMap = dynamic(() => import('@/components/homepage/roadmap'), {
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Header />
       <div>
         <Reason />
